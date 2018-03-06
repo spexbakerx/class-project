@@ -1,13 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="UTF-8">
+	<title>Post-er</title>
+
+	<!-- Responsive viewport tag, tells small screens that it's responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 	<!-- Normalize.css, a cross-browser reset file -->
+ 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+
+	<!-- Stylesheets -->
+ 	<link rel="stylesheet" href="styles/float-grid.css" />
+ 	<link rel="stylesheet" href="styles/index.css" />
 
 </head>
 <body>
 
+	<!-- Sticky Navigation bar -->
+	<ul class="nav">
+		<li>Post-er</li>
+		<li><a href="#section1">1</a></li>
+		<li><a href="#section2">2</a></li>
+		<li><a href="#section3">3</a></li>
+		<li><a href="#section4">4</a></li>
+	</ul>
 
-<script type="text/javscript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Section 1 (home) -->
+	<div class="section black" id="section1">
+		<h1>post.er helps you make a print-ready, trendy looking flyer for your event/show in minutes. </h1>
+		<a href="#section2"><button type="button">Get Started</button></a>
+	</div>
+
+	<!-- Section 2 (fonts) -->
+	<div class="section blue" id="section2">
+		<h1>Step 1: Fonts</h1>
+
+		<form id="form1">
+			<fieldset class="form__options">
+				<p class="form__answer">
+					<input type="radio" name="fontChoice" id="r1" value="1">
+					<label for="r1">1 –– </br> Eczar + Work Sans</label>
+				</p>
+				<p class="form__answer">
+					<input type="radio" name="fontChoice" id="r2" value="2">
+					<label for="r2">2 –– </br> Archivo Black + Tenor</label>
+				</p>
+				<p class="form__answer">
+					<input type="radio" name="fontChoice" id="r3" value="3">
+					<label for="r3">3 –– </br> Rubik + Roboto Mono</label>
+				</p>
+			</fieldset>
+			<a href="#section3"><button  class="underline button">Next: Colors</button></a>
+			</form>				
+	</div>
+
+
+	<!-- Section 3 (colors) -->
+	<div class="section purple" id="section3">
+		<h1>Step 2: Colors</h1>
+
+		<form id="form2">
+			<fieldset class="form__options">
+				<p class="form__answer">
+					<input type="radio" name="colorChoice" id="r1" value="1">
+					<label for="r1">1 –– </br> Gray + Red</label>
+				</p>
+				<p class="form__answer">
+					<input type="radio" name="colorChoice" id="r2" value="2">
+					<label for="r2">2 –– </br> Purple + Red</label>
+				</p>
+				<p class="form__answer">
+					<input type="radio" name="colorChoice" id="r3" value="3">
+					<label for="r3">3 –– </br> Blue + Gray</label>
+				</p>
+			</fieldset>
+			<a href="#section4"><button type="submit" class="underline button">Next: Info</button></a>
+			</form>				
+	</div>
+
+
+	<!-- Section 4 (info) -->
+	<div class="section red" id="section4">
+		<h1>Step 3: Info</h1>
+
+		<form id="form3">
+			<fieldset class="form__options">
+				<p class="form__answer"> 1 –– </br> Event name </br> (or band names)
+					<input type="text" name="eventName1" id="eventName1" placeholder="Line 1 (headliner)">
+					<input type="text" name="eventName2" id="eventName2" placeholder="Line 2">
+					<input type="text" name="eventName3" id="eventName3" placeholder="Line 3">
+				</p>
+				<p class="form__answer"> 2 –– </br> Event </br> time
+					<input type="text" name="eventTime" id="eventTime" placeholder="12pm">
+				</p>
+				<p class="form__answer"> 3 –– </br> Event </br> price
+					<input type="text" name="eventPrice" id="eventPrice" placeholder="$10">
+				</p>				
+				<p class="form__answer"> 4 –– </br> Event </br> location
+					<textarea id="eventAddress" rows="4" cols="100" maxlength="500" placeholder="Address goes here"></textarea><br /><br />
+				</p>				
+			</fieldset>
+			<a href="#section4"><button type="submit" class="underline button">Next: Preview</button></a>
+			</form>				
+	</div>
+
+
+
+<div id="js-results"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="index.js"></script>
 
 </body>
