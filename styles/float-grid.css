@@ -129,5 +129,8 @@ button.underline.close {
 }
 
 input[type=text] {
- -webkit-appearance: none !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
  }
