@@ -1,7 +1,371 @@
-body {
-	font-family: "Helvectica", sans-serif;
+*{
+    margin:0;
+    padding:0;
 }
 
+body {
+	font-family: "Helvetica", sans-serif;
+	color: white;
+	font-size: 18px;
+
+}
+
+
 .section {
-	height: 100vh;;
+	margin:0px;
+    height:300vh;
+    width:100%;
+    float:left;
+}
+
+h1 {
+	font-size: 60px;
+	font-weight: 100;
+}
+
+.black {
+	background-color: black;
+}
+
+.grad1 {
+	background: linear-gradient(black, #2637DE);
+}
+
+.blue {
+	background-color: #2637DE;
+}
+
+.grad2 {
+	background: linear-gradient(#2637DE, #65119B);
+}
+
+.purple {
+	background-color: #65119B;
+}
+
+.grad3 {
+	background: linear-gradient(#65119B, #FF4100);
+}
+
+.red {
+	background-color: #FF4100;
+}
+
+.button {
+	font-size: 35px;
+}
+
+
+.button:hover  {
+	color: black:
+
+}
+
+.button.underline:active  {
+	color: black:
+
+}
+
+.button.underline  {
+	color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 8px;
+    background: none;
+    cursor:pointer;
+    margin-top: 80px;
+    	transition: all .5s ease-in-out;
+}
+
+
+
+
+.button.colorful {
+	position: relative;
+	appearance: none;
+	background: #FF4100;
+	padding: 1em 2em;
+	border: none;
+	color: white;
+	font-size: 1.2em;
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+	border-radius: 100px;
+	width: 100%;
+}
+	
+.button.colorful span {
+	position: relative;
+	pointer-events: none;
+}
+	
+.button.colorful::before {
+--size: 0;
+	content: '';
+	position: absolute;
+	left: var(--x);
+	top: var(--y);
+	width: var(--size);
+	height: var(--size);
+	background: radial-gradient(circle closest-side, #2637DE, transparent);
+	transform: translate(-50%, -50%);
+	transition: width .2s ease, height .2s ease;
+}
+	
+.button.colorful:hover::before {
+	--size: 400px;
+}
+
+input,
+label,
+select,
+button,
+textarea
+{
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+	
+	/* Browsers have different default form fonts */
+	font-size:18px;
+	font-family:"Helvectica", sans-serif;
+	outline: 0;
+}
+
+/* Remove the stupid outer glow in Webkit */
+input:focus
+{
+	outline:0;
+}
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea
+{
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+}
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select
+{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/* Buttons
+-----------------------------------------------*/
+
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"]
+{
+	/* Fix IE7 display bug */
+	overflow:visible;
+	width:auto;
+}
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button
+{	
+	padding:0;
+	border:0;
+	background:none;
+
+}
+
+
+
+/* Form styling
+-----------------------------------------------*/
+
+.form__options {
+	border: none;
+	padding: 0;
+}
+
+
+.form__options__wide {
+	border: none;
+	padding: 0;
+	margin:-10px;
+	margin-top: 50px;
+}
+
+.form__answer {
+	height: 250px;
+
+}
+
+.form__answer.small {
+	height: 127px;
+
+}
+
+.form__answer.wide input[type=text]{
+	width: 90%;
+
+}
+
+.font1 label{
+	color: white;
+	padding: 20px;
+	transition: all .2s ease-in-out;
+	position: relative;
+
+}
+
+.font1 {
+	padding:0px;
+
+}
+
+.color1 label{
+	background-color: #65119B;
+	color: white;
+	padding: 20px;
+	transition: all .2s ease-in-out;
+	position: relative;
+
+}
+
+.center{
+	position: absolute;
+    margin: auto;
+    width: 50%;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.color1 {
+	padding:0px;
+
+}
+
+
+/*.color2 label{
+	background-color: #7814B9;
+	color: #FF4100;
+	padding: 20px;
+	transition: all .2s ease-in-out;
+	position: relative;
+
+}
+
+.color2 {
+	padding:0px;
+}
+
+.color3 label{
+	background-color: #D4D4D4;
+	color: #232CE1;
+	padding: 20px;
+	transition: all .2s ease-in-out;
+	position: relative;
+}
+
+.color3 {
+	padding:0px;
+}*/
+
+label {
+	height: 100%;
+	width: 100%;
+	padding: 10px 10px 30px 10px;
+	margin: 0px;
+	cursor: pointer;
+
+
+/*	transition: all .5s ease-in-out;*/
+}
+label:hover{
+
+	color: white;
+	background-color: black;
+	} 
+
+
+label:focus{
+	background-color: black;
+	color: white;
+
+	} 
+
+label:active {
+	background-color: black;
+	color: white;
+
+
+}
+
+
+
+
+/* Input style */
+
+input[type="radio"] {
+	opacity: 0;
+	width: 0;
+  height: 0;
+}
+
+input[type="radio"]:active ~ label {
+  opacity: 1;
+}
+
+input[type="radio"]:checked ~ label {
+  opacity: 1;
+	/*border: 1px solid white;*/
+	background-color: black;
+	transition: all .5s ease-in-out;
+	color: white;
+
+}
+
+input[type=text] {
+	display: block;
+	border: 1px solid white;
+	padding: 10px;
+	margin-top: 10px;
+	width: 90%;
+	transition: all .5s ease-in-out;
+	color: white;
+}
+
+input[type=text]:focus {
+background-color: white;
+color: black;
+}
+
+input[type=text]:visited {
+color: white;
+}
+
+textarea {
+	display: block;
+	border: 1px solid white;
+	padding: 10px;
+	margin-top: 10px;
+	width: 90%;
+	height: 127px;
 }

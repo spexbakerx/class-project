@@ -21,88 +21,155 @@
 	<ul class="nav">
 		<li>Post-er</li>
 		<li><a href="#section1">1</a></li>
-		<li><a href="#section2">2</a></li>
-		<li><a href="#section3">3</a></li>
-		<li><a href="#section4">4</a></li>
 	</ul>
 
 	<!-- Section 1 (home) -->
+
+
 	<div class="section black" id="section1">
-		<h1>post.er helps you make a print-ready, trendy looking flyer for your event/show in minutes. </h1>
-		<a href="#section2"><button type="button">Get Started</button></a>
+		<div class="row">
+    	<div class="col-12">	
+			<h1>post.er <span style="font-weight:100">helps you make a print-ready, trendy looking flyer for your event in minutes.</span> </h1>
+		</div>
+		<div class="col-4">
+		<a href="#section2"><button type="button" class="button colorful"><span>Get Started</span></button></a>
+		</div>
+
+		</div>
 	</div>
+
+
+
+
+	<div class="section grad1"></div>
+
 
 	<!-- Section 2 (fonts) -->
 	<div class="section blue" id="section2">
-		<h1>Step 1: Fonts</h1>
+		<div class="row">
+		<div class="col-12">
+		<h1><span style="font-weight: bold;">Step 1:</span> Choose fonts</h1>
 
 		<form id="form1">
 			<fieldset class="form__options">
+				<div class="col-4 font1">
 				<p class="form__answer">
 					<input type="radio" name="fontChoice" id="r1" value="1">
-					<label for="r1">1 –– </br> Eczar + Work Sans</label>
+					<label for="r1">1 –– </br> Eczar + Work Sans <image class="center" src="images/ezcarWS@2x.png"></label>
 				</p>
+
+				</div>
+				<div class="col-4 font1">
 				<p class="form__answer">
 					<input type="radio" name="fontChoice" id="r2" value="2">
-					<label for="r2">2 –– </br> Archivo Black + Tenor</label>
+					<label for="r2">2 –– </br> Archivo Black + Tenor <image class="center" src="images/archivotenor@2x.png"></label>
 				</p>
+				</div>
+
+				<div class="col-4 font1">
 				<p class="form__answer">
 					<input type="radio" name="fontChoice" id="r3" value="3">
-					<label for="r3">3 –– </br> Rubik + Roboto Mono</label>
+					<label for="r3">3 –– </br> Rubik + Roboto Mono <image class="center" src="images/rubikRM@2x.png"></label>
 				</p>
+				</div>
 			</fieldset>
-			<a href="#section3"><button  class="underline button">Next: Colors</button></a>
-			</form>				
+		</div>
+			<div class="col-4">
+			<a href="#section3"><button type="button" class="button underline">Next: Colors </button></a>
+			</div>
+			</form>	
+		</div>			
 	</div>
+
+
+	<div class="section grad2"></div>
+
+
+
 
 
 	<!-- Section 3 (colors) -->
 	<div class="section purple" id="section3">
-		<h1>Step 2: Colors</h1>
+		<div class="row">
+		<div class="col-12">
+		<h1><span style="font-weight: bold;">Step 2:</span> Choose colors</h1>
 
 		<form id="form2">
 			<fieldset class="form__options">
+				<div class="col-4 color1">
 				<p class="form__answer">
-					<input type="radio" name="colorChoice" id="r1" value="1">
-					<label for="r1">1 –– </br> Gray + Red</label>
+					<input type="radio" name="colorChoice" id="r4" value="4">
+					<label for="r4" >1 –– </br> Gray + Red <image class="center" src="images/gray-lines@2x.png"></label>
 				</p>
+				</div>
+				<div class="col-4 color1">
 				<p class="form__answer">
-					<input type="radio" name="colorChoice" id="r2" value="2">
-					<label for="r2">2 –– </br> Purple + Red</label>
+					<input type="radio" name="colorChoice" id="r5" value="r5">
+					<label for="r5" >2 –– </br> Purple + Red <image class="center" src="images/red-lines@2x.png"></label>
 				</p>
+				</div>
+				<div class="col-4 color1">
 				<p class="form__answer">
-					<input type="radio" name="colorChoice" id="r3" value="3">
-					<label for="r3">3 –– </br> Blue + Gray</label>
+					<input type="radio" name="colorChoice" id="r6" value="6">
+					<label for="r6" >3 –– </br> Blue + Gray <image class="center" src="images/blue-lines@2x.png"></label>
 				</p>
-			</fieldset>
-			<a href="#section4"><button type="submit" class="underline button">Next: Info</button></a>
-			</form>				
+				</div>
+
+						<div class="nopadding-left col-4 ">
+			<a href="#section4"><button type="button" class="button underline"><strong>Next:</strong> Info</button></a>
+				</div>
+				</fieldset>
+			</form>	
+		
+
+		</div>
+
+		</div>			
 	</div>
 
 
+	<div class="section grad3"></div>
+
 	<!-- Section 4 (info) -->
 	<div class="section red" id="section4">
-		<h1>Step 3: Info</h1>
+		<div class="row">
+		<div class="col-12">
+		<h1><span style="font-weight: bold;">Step 3:</span> Info</h1>
 
 		<form id="form3">
-			<fieldset class="form__options">
-				<p class="form__answer"> 1 –– </br> Event name </br> (or band names)
+			<fieldset class="form__options__wide">
+
+				<div class="col-4">
+				<p class="form__answer wide"> 1 –– </br> Event name </br> (or band names)
 					<input type="text" name="eventName1" id="eventName1" placeholder="Line 1 (headliner)">
 					<input type="text" name="eventName2" id="eventName2" placeholder="Line 2">
 					<input type="text" name="eventName3" id="eventName3" placeholder="Line 3">
 				</p>
-				<p class="form__answer"> 2 –– </br> Event </br> time
+				</div>
+
+				<div class="col-4">
+				<p class="form__answer small"> 2 –– </br> Event time </br></br>
 					<input type="text" name="eventTime" id="eventTime" placeholder="12pm">
 				</p>
-				<p class="form__answer"> 3 –– </br> Event </br> price
+				<p class="form__answer small"> 3 –– </br> Event price
 					<input type="text" name="eventPrice" id="eventPrice" placeholder="$10">
-				</p>				
-				<p class="form__answer"> 4 –– </br> Event </br> location
-					<textarea id="eventAddress" rows="4" cols="100" maxlength="500" placeholder="Address goes here"></textarea><br /><br />
-				</p>				
+				</p>	
+				</div>	
+
+				<div class="col-4">		
+				<p class="form__answer"> 4 –– </br> Event location </br> </br> 
+					<input type="text" name="eventLocation1" id="eventLocation1" placeholder="Name of venue">
+					<input type="text" name="eventLocation2" id="eventLocation1" placeholder="Address line 1">
+					<input type="text" name="eventLocation3" id="eventLocation1" placeholder="Address line 1">
+				</p>	
+				</div>			
 			</fieldset>
-			<a href="#section4"><button type="submit" class="underline button">Next: Preview</button></a>
-			</form>				
+			</div>
+			<div class="col-4">
+			<a href="#section4"><button type="submit" class="button underline"><strong>Next:</strong> Preview</button></a>
+			</form>	
+			</div>
+		</div>			
 	</div>
 
 
@@ -111,6 +178,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
 
 </body>
 </html>
