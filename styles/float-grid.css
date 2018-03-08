@@ -114,3 +114,11 @@ h1 {
 .navbar {
   background-color: black;
 }
+
+.modal-content {
+  font-size: 25px !important;
+}
+
+.modal-content a {
+    padding-bottom: 3px !important;
+}

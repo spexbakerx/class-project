@@ -6,21 +6,17 @@
 
 
 .navbar {
-/*	 background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,.5));*/
+
 		position: fixed;
 	height: 50px;
 	color: white;
-/*	padding: 50px;*/
 	list-style-type: none;
 	padding: 25px;
 	z-index: 1;
 	height: 100px;
 }
 
-/*
-.info {
-	float: right;
-}*/
+
 
 .logo {
 	width: 140px;
@@ -129,21 +125,25 @@ h1 {
 }
 
 button.underline.close {
-	    border-bottom: none;
-	    margin-bottom: 100px;
+    border-bottom: none;
+    margin-bottom: 50px;
+    border-radius: border-radius: 50%;
+    margin-top: 50px;
+
 }
 
-button.underline.close:hover {
-      -webkit-transform: rotateZ(360deg);
-      -moz-transform: rotateZ(360deg);
-      transform: rotateZ(360deg);
-  }
 
-.spin:hover {
-	      -webkit-transform: rotateZ(360deg);
-      -moz-transform: rotateZ(360deg);
-      transform: rotateZ(360deg);
+.spin {
+	border-radius: border-radius: 50%;
+	-webkit-transition: -webkit-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
 }
+
+.spin:active {
+	-webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+}
+
 
 .button.colorful {
 	position: relative;
@@ -328,30 +328,6 @@ input[type="submit"]
 }
 
 
-/*.color2 label{
-	background-color: #7814B9;
-	color: #FF4100;
-	padding: 20px;
-	transition: all .2s ease-in-out;
-	position: relative;
-
-}
-
-.color2 {
-	padding:0px;
-}
-
-.color3 label{
-	background-color: #D4D4D4;
-	color: #232CE1;
-	padding: 20px;
-	transition: all .2s ease-in-out;
-	position: relative;
-}
-
-.color3 {
-	padding:0px;
-}*/
 
 label {
 	height: 100%;
@@ -361,7 +337,7 @@ label {
 	cursor: pointer;
 
 
-/*	transition: all .5s ease-in-out;*/
+
 }
 label:hover{
 
@@ -439,6 +415,30 @@ textarea {
 #animatedModal {
 	text-align: center;
 	padding-top: 10%;
+/*	transition: all .5s ease-in-out;*/
+
+}
+
+.modal-content {
+	color: white;
+	font-size: 35px;
+	line-height: 1.5em;
+	padding: 50px;
+}
+
+.modal-content a {
+	color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 6px;
+    transition: all .2s ease-in-out;
+}
+
+.modal-content a:hover {
+	color: #4C4C4C;
+	border-bottom: 1px solid #2637DE;
+
+    
 }
 
 
