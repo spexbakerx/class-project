@@ -122,3 +122,8 @@ h1 {
 .modal-content a {
     padding-bottom: 3px !important;
 }
+
+button.underline.close {
+    margin-bottom: 20px !important;
+
+}
