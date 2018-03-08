@@ -3,6 +3,53 @@
     padding:0;
 }
 
+
+
+.navbar {
+/*	 background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,.5));*/
+		position: fixed;
+	height: 50px;
+	color: white;
+/*	padding: 50px;*/
+	list-style-type: none;
+	padding: 25px;
+	z-index: 1;
+	height: 100px;
+}
+
+/*
+.info {
+	float: right;
+}*/
+
+.logo {
+	width: 140px;
+}
+
+.oval {
+  width: 100px;
+  height: 50px;
+  background: none;
+  border-radius: 50%;
+  border: 1px solid white;
+  float: right;
+}
+
+.info {
+	text-align: center;
+    padding-left: 35px;
+    line-height: 45px;
+    color: white;
+}
+
+.info:hover {
+	text-decoration: underline;
+}
+
+.oval:hover {
+	border: 1px solid white;
+}
+
 body {
 	font-family: "Helvetica", sans-serif;
 	color: white;
@@ -13,10 +60,13 @@ body {
 
 .section {
 	margin:0px;
-    height:300vh;
+    height:150vh;
     width:100%;
     float:left;
+    padding-top: 8%;
 }
+
+
 
 h1 {
 	font-size: 60px;
@@ -25,6 +75,7 @@ h1 {
 
 .black {
 	background-color: black;
+	padding-top: 15%;
 }
 
 .grad1 {
@@ -77,8 +128,22 @@ h1 {
     	transition: all .5s ease-in-out;
 }
 
+button.underline.close {
+	    border-bottom: none;
+	    margin-bottom: 100px;
+}
 
+button.underline.close:hover {
+      -webkit-transform: rotateZ(360deg);
+      -moz-transform: rotateZ(360deg);
+      transform: rotateZ(360deg);
+  }
 
+.spin:hover {
+	      -webkit-transform: rotateZ(360deg);
+      -moz-transform: rotateZ(360deg);
+      transform: rotateZ(360deg);
+}
 
 .button.colorful {
 	position: relative;
@@ -369,3 +434,12 @@ textarea {
 	width: 90%;
 	height: 127px;
 }
+
+
+#animatedModal {
+	text-align: center;
+	padding-top: 10%;
+}
+
+
+

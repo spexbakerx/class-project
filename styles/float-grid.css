@@ -19,7 +19,7 @@
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-  padding-top: 5%;
+/*  padding-top: 5%;*/
 }
 
 /* Clearfix */
@@ -97,38 +97,20 @@
 /* Styles */
 
     
-  .current-score {
-  top: 0;
-  left: 0;
-  position: absolute;
-  }
-
-  .js-question-answer-form ul li{
-    color: white;
-    margin-bottom: 8%;
-    margin-top: 8%;
-    height: auto;
-  }
-
-  .button{
-    width: 90%;
-    -webkit-appearance: none;
-  }
-
-  input[type=submit] {
-    width: 90%;
-    -webkit-appearance: none;
-  }
-
-
-  .js-start-page h1 {
-  font-size: 50px;
-  }
+.section {
+  height: 200vh !important;
+  padding-top: 28% !important;
+}
 
 
 h1 {
-  font-size: 42px;
+  font-size: 40px !important;
 }
   
+.black {
+  padding-top: 25% !important;
+}
 
+.navbar {
+  background-color: black;
 }
