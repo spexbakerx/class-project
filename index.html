@@ -78,7 +78,7 @@
 		<div class="col-12">
 		<h1><span style="font-weight: bold;">Step 1:</span> Choose fonts</h1>
 
-		<form id="form1">
+		<form id="form1" action="#section3">
 			<fieldset class="form__options">
 				<div class="col-4 font1">
 				<p class="form__answer">
@@ -102,9 +102,11 @@
 				</div>
 			</fieldset>
 		</div>
+			<!-- <a href="#section3"> -->
 			<div class="col-4">
-			<a href="#section3"><button type="button" class="button underline"><strong>Next:</strong> Colors </button></a>
+			<button type="submit" class="button underline"><strong>Next:</strong> Colors </button>
 			</div>
+			<!-- </a> -->
 			</form>	
 		</div>			
 	</div>
@@ -122,7 +124,7 @@
 		<div class="col-12">
 		<h1><span style="font-weight: bold;">Step 2:</span> Choose colors</h1>
 
-		<form id="form2">
+		<form id="form2" action="#section4">
 			<fieldset class="form__options">
 				<div class="col-4 color1">
 				<p class="form__answer">
@@ -144,7 +146,7 @@
 				</div>
 
 						<div class="nopadding-left col-4 ">
-			<a href="#section4"><button type="button" class="button underline"><strong>Next:</strong> Info</button></a>
+			<a href="#section4"><button type="sumbit" class="button underline"><strong>Next:</strong> Info</button></a>
 				</div>
 				</fieldset>
 			</form>	
@@ -201,7 +203,20 @@
 
 
 
-<div id="js-results"></div>
+<div id="js-results">
+		<div class="section black-results" id="section1">
+		<div class="row">
+    	<div class="col-6 col-aligncenter flyer-box">	
+			<h1>poster goes here. </h1>
+		</div>
+		<div class="col-4 col-aligncenter">
+		<a href="#section2"><button type="button" class="button colorful"><span>Download</span></button></a>
+		</div>
+
+		</div>
+	</div>
+
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
