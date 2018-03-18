@@ -3,6 +3,12 @@
     padding:0;
 }
 
+:root { 
+	--color1: #ffffe0; 
+	--color2: #fffffF;
+	--font1: "";
+	--font2: "";
+}
 
 
 .navbar {
@@ -446,7 +452,7 @@ textarea {
 	padding-top: 2%;
 }
 
-#js-results {
+#js-flyer {
 	background-color: black;
 	width: 100vw;
 	height: 100vh;
@@ -455,7 +461,74 @@ textarea {
 }
 
 .flyer-box {
-	height: 70vh;
-	width: 25vw;
-	border: 1px solid white;
+	height: 487px;
+	width: 320px;
+	text-align: center;
+	word-wrap:break-word;
+	position: relative;
+	color: var(--color2);
+	background-color: var(--color1);
 }
+
+.flyer-box h1 {
+	text-align: center;
+    font-size: 210%;
+    margin: 0px;
+    font-family: var(--font1);
+
+}
+
+.flyer-box h1:nth-of-type(2) {
+	font-family: var(--font2);
+	font-weight: light;
+}
+
+.flyer-box h1:nth-of-type(3) {
+	font-weight: light;
+}
+
+.flyer-box h2 {
+    font-family: var(--font2);
+
+
+}
+
+.flyer-bottom {
+	position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+/*    -webkit-transform: translate(-50%,-50%);*/
+	bottom: 5%;
+	font-size: 40%;
+}
+
+.flyer-top {
+	position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+/*    -webkit-transform: translate(-50%,-50%);*/
+	top: 5%;
+	font-size: 40%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.circle {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 15%;
+  height: 5%;
+  border-radius: 50%;
+  font-size: 50%;
+  line-height: 500px;
+  text-align: center;
+  border: 1px solid var(--color2);
+  line-height: 1.6;
+}
+
+#flyer-center {
+	padding-top: 50%;
+	line-height: 1.2;
+}
+
