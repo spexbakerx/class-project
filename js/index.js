@@ -1,4 +1,6 @@
-// import domtoimage from 'dom-to-image';
+
+
+ /* global html2canvas */
 
 // ------- state management ------- //
 const store = {
@@ -194,7 +196,7 @@ function buildFlyer(){
 
    return    `<div class="black-results" id="section1">
 			    <div class="row">
-					    <div class="col-6 flyer-box">
+					    <div class="col-6 flyer-box" id="flyer-capture">
 					        <div id="flyer-top">
 							    <h2 class="flyer-date">${store.userEventDate}</h2>
 							    <h2 class="flyer-time">${store.userEventTime}</h2>
@@ -220,15 +222,15 @@ function buildFlyer(){
 						    <button type="button" class="button underline restart-button"><span>Start Over</span></button>
 					    </div>
 
+					    <div id="destination"></div>
+
 			    </div>
 			  </div>`
 
 
 
 
-						    // <a class="twitter-share-button" href="https://twitter.com/home?status=I%20made%20a%20flyer%20with%20http%3A//bit.ly/2HJMzym%20thx%20%40spexbakerx%20!""><i class="fab fa-twitter"></i></a>
-						    // <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//spexbakerx.github.io/class-project/"><i class="fab fa-facebook"></i></a>
-						    // <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//bit.ly/2HJMzym&title=&summary=Awesome%20flyer%20building%20tool%20made%20by%20Lauren%20Baker!&source="><i class="fab fa-linkedin-in"></i></a>
+
 
 
 
@@ -257,18 +259,42 @@ function restartFlyer(){
 
 // ------- saves flyer image on button click ------- //
 
+// function handleDownload(){
+// 	$("#js-flyer").on ('click','#download', function(event){
+// 		console.log('download clicked');
+// 		domtoimage.toJpeg(document.getElementById('.flyer-box'), { quality: 0.95 })
+// 		    .then(function (dataUrl) {
+// 		        var link = document.createElement('a');
+// 		        link.download = 'my-image-name.jpeg';
+// 		        link.href = dataUrl;
+// 		        link.click();
+// 	    });
+// 	});
+// }
+
+
 function handleDownload(){
 	$("#js-flyer").on ('click','#download', function(event){
 		console.log('download clicked');
-		domtoimage.toJpeg(document.getElementById('.flyer-box'), { quality: 0.95 })
-		    .then(function (dataUrl) {
-		        var link = document.createElement('a');
-		        link.download = 'my-image-name.jpeg';
-		        link.href = dataUrl;
-		        link.click();
-	    });
-	});
+
+		// Get source element and destination div.
+		var element = document.getElementById('flyer-capture');
+		var destination = document.getElementById('destination');
+
+
+		function myRenderFunction(canvas) {
+  		destination.append(canvas);
+		}
+
+		html2canvas(element, {
+			scale: 2,
+			onrendered: myRenderFunction
+		});
+
+	})
 }
+
+
 
 
 
