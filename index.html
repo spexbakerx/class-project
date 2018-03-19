@@ -14,9 +14,15 @@
  	<link rel="stylesheet" href="styles/float-grid.css" />
  	<link rel="stylesheet" href="styles/index.css" />
  	<link rel="stylesheet" href="styles/animate.min.css">
+ 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+
+
 
 </head>
-<body>
+<body onload="myFunction()">
+
+
+<div id="main" class="animate-bottom">
 
 	<!-- Sticky Navigation bar -->
 <div class="col-12 navbar">
@@ -27,7 +33,8 @@
 </div>
 
 
-    <!--Call your modal-->
+
+    <!--info modal-->
     <div id="animatedModal" >
         <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
         
@@ -41,9 +48,15 @@
        		<p>and is based on <a href="http://fonts.greatsimple.io/">this resource by Great Simple</a></p>
        		</br>
             <p>Made with &#9787; by <a href="http://spexbakerx.com">Lauren Baker</a></p>
-                  
+       		</br>
+            <span class="icons"><a class="twitter-share-button" href="https://twitter.com/home?status=I%20made%20a%20flyer%20with%20http%3A//bit.ly/2HJMzym%20thx%20%40spexbakerx%20!""><i class="fab fa-twitter"></i></a>
+		    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//spexbakerx.github.io/class-project/"><i class="fab fa-facebook"></i></a>
+		    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//bit.ly/2HJMzym&title=&summary=Awesome%20flyer%20building%20tool%20made%20by%20Lauren%20Baker!&source="><i class="fab fa-linkedin-in"></i></a>
+            </span>     
         </div>
     </div>
+
+
 
 
 	<!-- Section 1 (home) -->
@@ -201,37 +214,13 @@
 		</div>			
 	</div>
 
+<div class="section grad4"></div>
 
 
-<div id="js-flyer">
-<!-- 		<div class="section black-results" id="section1">
-		<div class="row">
-    	<div class="col-6 col-aligncenter flyer-box">
-    		<div class="flyer-top">
-				<h2 class="flyer-date">Flyer Date</h2>
-				<h2 class="flyer-time">Flyer time</h2>
-    		</div>
-    		<div class="circle">
-    			<h2 class="flyer-price">$10</h2>
-    		</div>
-    		<div class="flyer-center">
-				<h1>Event name 1</h1>
-				<h1>Event name 1</h1>
-				<h1>Event name 1</h1>
-			</div>
-			<div class="flyer-bottom">
-				<h2 class="flyer-location">Event place</h2>
-				<h2 class="flyer-location">Event place</h2>
-				<h2 class="flyer-location">Event place</h2>
-			</div>
-		</div>
-		<div class="col-4 col-aligncenter">
-		<button type="button" class="button colorful"><span>Download</span></button>
-		</div>
+<div id="js-flyer"></div>
 
-		</div>
-	</div>
- -->
+
+
 </div>
 
 
@@ -239,15 +228,31 @@
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/animatedModal.min.js"></script>
-<script type="text/javascript" src="js/animatedModal.js"></script>
+
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("#main").style.display = "block";
+}
+</script>
+
 
 <script>
 	$("#demo01").animatedModal({
+
 	animatedIn: 'slideInRight',
     animatedOut: 'slideOutRight',
     color: 'black',
 	});
 </script>
+
+
+
 
 </body>
 </html>

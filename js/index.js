@@ -97,6 +97,7 @@ function handleColor(){
 		event.preventDefault();
 		let chosenColor = $("input[type='radio'][name='colorChoice']:checked").val();
 		assignColor(chosenColor);
+		event.preventDefault();
 		$('html,body').animate({scrollTop: $("#section4").offset().top}, 1500, 'easeInOutExpo');
 		$(':root').css({'--color1':''+store.userColor1+''});
 		$(':root').css({'--color2':''+store.userColor2+''});
@@ -138,13 +139,11 @@ function handleFinal(){
 		store.userEventLocation3 = document.getElementById("eventLocation3").value;
 
 		buildFlyer();
-	
-
-		console.log(store.userFont1);
-
-
 
 		displayFlyerPage();
+
+		event.preventDefault();
+  		$('html,body').animate({scrollTop: $("#js-flyer").offset().top}, 1500, 'easeInOutExpo');
 
 		if (store.userFont1 == "Rubik") {
 			$("#flyer-center h1").css("text-transform", "uppercase");
@@ -160,6 +159,7 @@ function handleFinal(){
 		}
 
 
+
 	});
 }
 
@@ -169,34 +169,43 @@ function handleFinal(){
 function buildFlyer(){      	
 
 
-   return    `<div class="section black-results" id="section1">
-    <div class="row">
-      <div class="col-6 col-aligncenter flyer-box">
-        <div class="flyer-top">
-        <h2 class="flyer-date">${store.userEventDate}</h2>
-        <h2 class="flyer-time">${store.userEventTime}</h2>
-        </div>
-        <div class="circle">
-          <h2 class="flyer-price">${store.userEventPrice}</h2>
-        </div>
-        <div id="flyer-center">
-        <h1>${store.userEventName1}</h1>
-        <h1>${store.userEventName2}</h1>
-        <h1>${store.userEventName3}</h1>
-      </div>
-      <div class="flyer-bottom">
-        <h2 class="flyer-location">${store.userEventLocation1}</h2>
-        <h2 class="flyer-location">${store.userEventLocation2}</h2>
-        <h2 class="flyer-location">${store.userEventLocation3}</h2>
-      </div>
-    </div>
-    <div class="col-4 col-aligncenter">
-    <button type="button" class="button colorful"><span>Download</span></button>
-    </div>
+   return    `<div class="black-results" id="section1">
+			    <div class="row">
+					    <div class="col-6 flyer-box">
+					        <div class="flyer-top">
+							    <h2 class="flyer-date">${store.userEventDate}</h2>
+							    <h2 class="flyer-time">${store.userEventTime}</h2>
+					        </div>
+					        <div class="circle">
+						        <h2 class="flyer-price">${store.userEventPrice}</h2>
+					        </div>
+					        <div id="flyer-center">
+						        <h1>${store.userEventName1}</h1>
+						        <h1>${store.userEventName2}</h1>
+						        <h1>${store.userEventName3}</h1>
+						    </div>
+						    <div class="flyer-bottom">
+							    <h2 class="flyer-location">${store.userEventLocation1}</h2>
+							    <h2 class="flyer-location">${store.userEventLocation2}</h2>
+							    <h2 class="flyer-location">${store.userEventLocation3}</h2>
+						    </div>
+					    </div>
 
-    </div>
-  </div>`
+					    <div class="col-4" id="last">
+						    <button type="button" class="button colorful"><span>Download</span></button>
 
+						    <button type="button" class="button underline restart-button"><span>Start Over</span></button>
+					    </div>
+
+			    </div>
+			  </div>`
+
+
+
+
+						    // <a class="twitter-share-button" href="https://twitter.com/home?status=I%20made%20a%20flyer%20with%20http%3A//bit.ly/2HJMzym%20thx%20%40spexbakerx%20!""><i class="fab fa-twitter"></i></a>
+						    // <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//spexbakerx.github.io/class-project/"><i class="fab fa-facebook"></i></a>
+						    // <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//bit.ly/2HJMzym&title=&summary=Awesome%20flyer%20building%20tool%20made%20by%20Lauren%20Baker!&source="><i class="fab fa-linkedin-in"></i></a>
 
 
 
@@ -205,9 +214,24 @@ function buildFlyer(){
 // ------- displays built flyer ------- //
 function displayFlyerPage(){
   $("#js-flyer").html(buildFlyer());
-  $("#js-flyer").css('visibility', 'visible').addClass('animated fadeInUpBig');
+  $(".grad4").css('visibility', 'visible').show();
+  $("#js-flyer").css('visibility', 'visible').show();
+
+
+  // $("#js-flyer").css('visibility', 'visible').addClass('animated fadeInUpBig');
 
 }
+
+
+// ------- restart process ------- //
+function restartFlyer(){
+	$("#js-flyer").on ('click','.restart-button', function(event){
+		event.preventDefault();
+		location.reload(true);
+  })
+}
+
+
 
 
 // ------- smooth scroll ------- //
@@ -234,7 +258,14 @@ document.querySelector('.button.colorful').onmousemove = (e) => {
  
 }
 
+
+$("#main").show();
+$(".grad4").hide();
+$("#js-flyer").hide();
+$('html, body').animate({ scrollTop: 0 }, 'slow',);
+
 handleFont();
 handleColor();
 handleFinal();
+restartFlyer();
 
