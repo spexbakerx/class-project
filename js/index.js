@@ -1,3 +1,5 @@
+// import domtoimage from 'dom-to-image';
+
 // ------- state management ------- //
 const store = {
 	userFont1: "",
@@ -101,7 +103,13 @@ function handleColor(){
 		$('html,body').animate({scrollTop: $("#section4").offset().top}, 1500, 'easeInOutExpo');
 		$(':root').css({'--color1':''+store.userColor1+''});
 		$(':root').css({'--color2':''+store.userColor2+''});
-		$('.flyer-box').css({'background-color':''+store.userColor1+''});
+		console.log(store.userColor1);
+		if (store.userColor1 == "#d4d4d4") {
+			$('.flyer-box').css({'background-color':'linear-gradient('+store.userColor1+','+store.userColor2+')'});
+		}
+		else {
+			$('.flyer-box').css({'background':''+store.userColor1+''});
+		}
 	});
 }
 
@@ -153,11 +161,26 @@ function handleFinal(){
 		}
 
 		else if (store.userFont1 == "Eczar") {
-			$("#flyer-center h1").css("font-weight", "bold");
-			$("#flyer-center h1:nth-of-type(2)").css("text-transform", "none");
+			$("#flyer-center h1").css("font-weight", "normal");
+			$("#flyer-center h1:nth-of-type(1)").css("font-weight", "bold");
+			$("#flyer-center h1:nth-of-type(3)").css("font-weight", "bold");
+			$("#flyer-center h2").css("font-weight", "normal");
 
 		}
 
+		else if (store.userFont1 == "Archivo Black") {
+			$("#flyer-center h1").css("text-transform", "uppercase");
+			$("#flyer-center h1").css("font-weight", "900");
+			$("#flyer-center h1:nth-of-type(2)").css("font-weight", "normal");
+			$("#flyer-top h2.flyer-date").css("font-family", "var(--font2);");
+			$("#flyer-top h2.flyer-date").css("text-transform", "uppercase");
+			$("#flyer-top h2.flyer-date").css("font-weight", "900");
+
+		}
+
+		// else if (store.userColor1 == "#d4d4d4") {
+		// 	$('.flyer-box').css({background:'linear-gradient(red,blue,red)'});
+		// }
 
 
 	});
@@ -172,7 +195,7 @@ function buildFlyer(){
    return    `<div class="black-results" id="section1">
 			    <div class="row">
 					    <div class="col-6 flyer-box">
-					        <div class="flyer-top">
+					        <div id="flyer-top">
 							    <h2 class="flyer-date">${store.userEventDate}</h2>
 							    <h2 class="flyer-time">${store.userEventTime}</h2>
 					        </div>
@@ -192,7 +215,7 @@ function buildFlyer(){
 					    </div>
 
 					    <div class="col-4" id="last">
-						    <button type="button" class="button colorful"><span>Download</span></button>
+						    <button type="button" class="button colorful" id="download"><span>Download</span></button>
 
 						    <button type="button" class="button underline restart-button"><span>Start Over</span></button>
 					    </div>
@@ -232,6 +255,22 @@ function restartFlyer(){
 }
 
 
+// ------- saves flyer image on button click ------- //
+
+function handleDownload(){
+	$("#js-flyer").on ('click','#download', function(event){
+		console.log('download clicked');
+		domtoimage.toJpeg(document.getElementById('.flyer-box'), { quality: 0.95 })
+		    .then(function (dataUrl) {
+		        var link = document.createElement('a');
+		        link.download = 'my-image-name.jpeg';
+		        link.href = dataUrl;
+		        link.click();
+	    });
+	});
+}
+
+
 
 
 // ------- smooth scroll ------- //
@@ -267,5 +306,6 @@ $('html, body').animate({ scrollTop: 0 }, 'slow',);
 handleFont();
 handleColor();
 handleFinal();
+handleDownload();
 restartFlyer();
 

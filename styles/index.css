@@ -530,16 +530,12 @@ textarea {
 
 .flyer-box h1:nth-of-type(2) {
 	font-family: var(--font2);
-	font-weight: light;
 }
 
-.flyer-box h1:nth-of-type(3) {
-	font-weight: light;
-}
 
 .flyer-box h2 {
     font-family: var(--font2);
-
+    font-weight: normal;
 
 }
 
@@ -552,7 +548,7 @@ textarea {
 	font-size: 40%;
 }
 
-.flyer-top {
+#flyer-top {
 	position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
