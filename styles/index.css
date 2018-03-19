@@ -465,6 +465,12 @@ textarea {
 	font-size: 35px;
 	line-height: 1.5em;
 	padding: 50px;
+	text-align: center;
+}
+
+#js-flyer.model-content {
+	color: black;
+	text-align: center;
 }
 
 .modal-content a {
@@ -491,6 +497,10 @@ textarea {
 	border-bottom: 1px solid #2637DE;
 
     
+}
+
+#btn-close-modal {
+	text-align: center;
 }
 
 .results-black {

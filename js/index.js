@@ -196,7 +196,9 @@ function buildFlyer(){
 
    return    `<div class="black-results" id="section1">
 			    <div class="row">
+	
 					    <div class="col-6 flyer-box" id="flyer-capture">
+					    
 					        <div id="flyer-top">
 							    <h2 class="flyer-date">${store.userEventDate}</h2>
 							    <h2 class="flyer-time">${store.userEventTime}</h2>
@@ -209,26 +211,43 @@ function buildFlyer(){
 						        <h1>${store.userEventName2}</h1>
 						        <h1>${store.userEventName3}</h1>
 						    </div>
-						    <div class="flyer-bottom">
+						    <span class="flyer-bottom" id="flyer-bottom"> 
 							    <h2 class="flyer-location">${store.userEventLocation1}</h2>
 							    <h2 class="flyer-location">${store.userEventLocation2}</h2>
 							    <h2 class="flyer-location">${store.userEventLocation3}</h2>
-						    </div>
-					    </div>
+						    </span>
+
+				 		</div>
+
 
 					    <div class="col-4" id="last">
 						    <button type="button" class="button colorful" id="download"><span>Download</span></button>
-
+						    <a href="#modal-02" id="demo02" class="button underline" style="display:none;">test 2</a>
 						    <button type="button" class="button underline restart-button"><span>Start Over</span></button>
 					    </div>
 
-					    <div id="destination"></div>
+					    
 
 			    </div>
-			  </div>`
 
 
 
+			  </div>
+
+
+			  <div id="modal-02">
+
+		        	<div id="btn-close-modal" class="close-modal-02"> 
+			            <button type="button" class="button underline close" style="color:black;text-align:center;"><div class="spin">&#x2715;</div></button></a>
+			        </div>		
+
+			        <div class="modal-content">
+			        	<p style="color:black;"> right click to save </p>
+			        	</br>
+			    		<div id="destination"></div>
+			    	</div>
+			    	
+			    </div>`
 
 
 
@@ -238,9 +257,16 @@ function buildFlyer(){
 
 // ------- displays built flyer ------- //
 function displayFlyerPage(){
-  $("#js-flyer").html(buildFlyer());
-  $(".grad4").css('visibility', 'visible').show();
-  $("#js-flyer").css('visibility', 'visible').show();
+	$("#js-flyer").html(buildFlyer());
+	$(".grad4").css('visibility', 'visible').show();
+	$("#js-flyer").css('visibility', 'visible').show();
+	$("#demo02").animatedModal({
+	modalTarget:'modal-02',
+	animatedIn: 'slideInRight',
+    animatedOut: 'slideOutRight',
+    animationDuration: '1s',
+    color: 'white',
+	});
 
 
   // $("#js-flyer").css('visibility', 'visible').addClass('animated fadeInUpBig');
@@ -257,43 +283,60 @@ function restartFlyer(){
 }
 
 
+var downloadCounter = 0;
+
+
 // ------- saves flyer image on button click ------- //
-
-// function handleDownload(){
-// 	$("#js-flyer").on ('click','#download', function(event){
-// 		console.log('download clicked');
-// 		domtoimage.toJpeg(document.getElementById('.flyer-box'), { quality: 0.95 })
-// 		    .then(function (dataUrl) {
-// 		        var link = document.createElement('a');
-// 		        link.download = 'my-image-name.jpeg';
-// 		        link.href = dataUrl;
-// 		        link.click();
-// 	    });
-// 	});
-// }
-
-
 function handleDownload(){
 	$("#js-flyer").on ('click','#download', function(event){
+		// $("#modal-02 a").on ('click','#download', function(event){
 		console.log('download clicked');
-
-		// Get source element and destination div.
-		var element = document.getElementById('flyer-capture');
-		var destination = document.getElementById('destination');
+		console.log()
 
 
-		function myRenderFunction(canvas) {
-  		destination.append(canvas);
+		if (downloadCounter == 0) {
+
+			downloadCounter ++;
+
+			// Get source element and destination div.
+			var element = document.getElementById('flyer-capture');
+			var destination = document.getElementById('destination');
+
+
+			function myRenderFunction(canvas) {
+				destination.append(canvas);
+			}
+
+			html2canvas(element, {
+				scale: 11,
+				onrendered: myRenderFunction
+			});
+
+			$("#demo02")[0].click();
 		}
 
-		html2canvas(element, {
-			scale: 2,
-			onrendered: myRenderFunction
-		});
+		else {
+			$("#demo02")[0].click();
+		}
 
 	})
 }
 
+
+// function handleDownload(){
+// 	$("#js-flyer").on ('click','#download', function(event){
+// 		console.log('download clicked');
+// 	function openWin() {
+// 		var divText = document.getElementById("flyer-capture").outerHTML;
+// 		var myWindow = window.open('', '', 'width=3450,height=5250');
+// 		var doc = myWindow.document;
+// 		doc.open();
+// 		doc.write(divText);
+// 		doc.close();
+// 	}
+// 	openWin();
+// })
+// }
 
 
 
