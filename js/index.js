@@ -368,8 +368,7 @@ function handleDownload(){
 			}
 
 			html2canvas(element, {
-				scale: 2,
-				scrollX: 0,
+				scale: 5,
 				onrendered: myRenderFunction
 			});
 
@@ -377,10 +376,10 @@ function handleDownload(){
 
 			console.log("canvas");
 
-			var download = document.getElementById("download");
-			var imageFinal = document.getElementById("h2canvas").toDataURL("image/png")
-			.replace("image/png", "image/octet-stream");
-			download.setAttribute("href", imageFinal);
+			// var download = document.getElementById("download");
+			// var imageFinal = document.getElementById("h2canvas").toDataURL("image/png")
+			// .replace("image/png", "image/octet-stream");
+			// download.setAttribute("href", imageFinal);
 
 
 			// var link = document.getElementById('flyer-box');
