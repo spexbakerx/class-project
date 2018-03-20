@@ -99,18 +99,24 @@ function getApi2(font) {
 function handleColor(){
 	$("#colorForm").on('submit',function(event){
 		event.preventDefault();
-		let chosenColor = $("input[type='radio'][name='colorChoice']:checked").val();
-		assignColor(chosenColor);
-		event.preventDefault();
-		$('html,body').animate({scrollTop: $("#section4").offset().top}, 1500, 'easeInOutExpo');
-		$(':root').css({'--color1':''+store.userColor1+''});
-		$(':root').css({'--color2':''+store.userColor2+''});
-		console.log(store.userColor1);
-		if (store.userColor1 == "#d4d4d4") {
-			$('.flyer-box').css({'background-color':'linear-gradient('+store.userColor1+','+store.userColor2+')'});
-		}
-		else {
-			$('.flyer-box').css({'background':''+store.userColor1+''});
+
+		if (!$('input[name="colorChoice"]').is(':checked')) {
+            alert("Please choose a color theme!");
+         }
+       
+
+        else {
+			let chosenColor = $("input[type='radio'][name='colorChoice']:checked").val();
+			assignColor(chosenColor);
+			$('html,body').animate({scrollTop: $("#section4").offset().top}, 1500, 'easeInOutExpo');
+			$(':root').css({'--color1':''+store.userColor1+''});
+			$(':root').css({'--color2':''+store.userColor2+''});
+			if (store.userColor1 == "#d4d4d4") {
+				$('.flyer-box').css({'background-color':'linear-gradient('+store.userColor1+','+store.userColor2+')'});
+			}
+			else {
+				$('.flyer-box').css({'background':''+store.userColor1+''});
+			}
 		}
 	});
 }
@@ -180,6 +186,10 @@ function handleFinal(){
 
 		}
 
+		else if (store.userEventPrice == "") {
+			$("#circle").css("display", "none");
+		}
+
 		// else if (store.userColor1 == "#d4d4d4") {
 		// 	$('.flyer-box').css({background:'linear-gradient(red,blue,red)'});
 		// }
@@ -203,7 +213,7 @@ function buildFlyer(){
 							    <h2 class="flyer-date">${store.userEventDate}</h2>
 							    <h2 class="flyer-time">${store.userEventTime}</h2>
 					        </div>
-					        <div class="circle">
+					        <div id="circle">
 						        <h2 class="flyer-price">${store.userEventPrice}</h2>
 					        </div>
 					        <div id="flyer-center">
@@ -260,14 +270,22 @@ function displayFlyerPage(){
 	$("#js-flyer").html(buildFlyer());
 	$(".grad4").css('visibility', 'visible').show();
 	$("#js-flyer").css('visibility', 'visible').show();
+
 	$("#demo02").animatedModal({
-	modalTarget:'modal-02',
-	animatedIn: 'slideInRight',
-    animatedOut: 'slideOutRight',
-    animationDuration: '1s',
-    color: 'white',
+		modalTarget:'modal-02',
+		animatedIn: 'slideInRight',
+	    animatedOut: 'slideOutRight',
+	    animationDuration: '1s',
+	    color: 'white',
 	});
 
+
+	document.querySelector('.button.colorful').onmousemove = (e) => {
+		const x = e.pageX - e.target.offsetLeft
+		const y = e.pageY - e.target.offsetTop
+		e.target.style.setProperty('--x', `${ x }px`)
+		e.target.style.setProperty('--y', `${ y }px`)
+	}
 
   // $("#js-flyer").css('visibility', 'visible').addClass('animated fadeInUpBig');
 
