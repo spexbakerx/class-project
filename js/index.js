@@ -246,7 +246,6 @@ function buildFlyer(){
 			    <div class="row">
 	
 					    <div class="col-6 flyer-box outer" id="flyer-capture">
-					    
 					        <div id="flyer-top" class="inner">
 							    <h2 class="flyer-date">${store.userEventDate}</h2>
 							    <h2 class="flyer-time">${store.userEventTime}</h2>
@@ -259,11 +258,11 @@ function buildFlyer(){
 						        <h1>${store.userEventName2}</h1>
 						        <h1>${store.userEventName3}</h1>
 						    </div>
-						    <span class="flyer-bottom inner" id="flyer-bottom"> 
+						    <div class="flyer-bottom inner" id="flyer-bottom"> 
 							    <h2 class="flyer-location">${store.userEventLocation1}</h2>
 							    <h2 class="flyer-location">${store.userEventLocation2}</h2>
 							    <h2 class="flyer-location">${store.userEventLocation3}</h2>
-						    </span>
+						    </div>
 
 				 		</div>
 
@@ -361,16 +360,25 @@ function handleDownload(){
 			// Get source element and destination div.
 			var element = document.getElementById('flyer-capture');
 			var destination = document.getElementById('destination');
+			// var tableImage;
 
+			document.location.href="#flyer-capture";
 
 			function myRenderFunction(canvas) {
-				destination.append(canvas);
+				// destination.append(canvas);
+
+		        tableImage = canvas.toDataURL("image/png");	
+		        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');	
+
+
 			}
 
 			html2canvas(element, {
 				scale: 5,
 				onrendered: myRenderFunction
 			});
+
+
 
 			$("#loader-box").fadeIn(800).delay(5000).fadeOut('slow');
 

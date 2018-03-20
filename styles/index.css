@@ -567,6 +567,11 @@ textarea {
     position: absolute;
 }
 
+/*#destination {
+	height: 487px;
+	width: 320px;
+}*/
+
 #js-flyer {
 	background-color: black;
 	margin:0px;
@@ -586,6 +591,8 @@ textarea {
 	color: var(--color2);
 	background-color: var(--color1);
 	margin-left: 10%;
+	padding: 0px;
+
 
 }
 
@@ -610,27 +617,26 @@ textarea {
 
 .flyer-bottom {
 	position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-/*    -webkit-transform: translate(-50%,-50%);*/
+/*    left: 50%;*/
 	bottom: 5%;
 	font-size: 40%;
-  z-index: 1;
-  background-color: var(--color1);
+	z-index: 1;
+	background-color: var(--color1);
+	width: 100%;
+
 
 }
 
 #flyer-top {
 	position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-/*    -webkit-transform: translate(-50%,-50%);*/
 	top: 5%;
 	font-size: 40%;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	z-index: 1;
 	background-color: var(--color1);
+	width: 100%;
+
 }
 
 #circle {
@@ -647,11 +653,13 @@ textarea {
   line-height: 1.6;
   z-index: 1;
   background-color: var(--color1);
+
 }
 
 #flyer-center {
 	padding-top: 50%;
 	line-height: 1.2;
+
 }
 
 #last {
