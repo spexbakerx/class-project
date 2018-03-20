@@ -31,11 +31,35 @@ const colorBlue = "#232ce1";
 
 // ------- handles font form ------- //
 function handleFont(){
-	$("#fontForm").on('submit',function(event){
+	$("#fontForm .button").on('click',function(event){
 		event.preventDefault();
-		let chosenFont = $("input[type='radio'][name='fontChoice']:checked").val();
-		assignFont(chosenFont);
-		 $('html,body').animate({scrollTop: $("#section3").offset().top}, 1500, 'easeInOutExpo');
+		let anythingFontChecked = false;
+
+
+		$('input[name="fontChoice"]').each(function(){
+			if ($(this).is(':checked')) {
+				anythingFontChecked = true;
+			}
+
+		})
+
+		if (!anythingFontChecked) {
+            // alert("Please choose a font theme!");
+            // swal("Please choose a font theme!");
+			 swal({
+				text: "Please choose a font theme!",
+				button: "",
+				});         
+         }
+       
+
+        else {
+		    let chosenFont = $("input[type='radio'][name='fontChoice']:checked").val();
+			assignFont(chosenFont);
+			$('html,body').animate({scrollTop: $("#section3").offset().top}, 1500, 'easeInOutExpo');
+		}
+
+
 	});
 }
 
@@ -97,12 +121,26 @@ function getApi2(font) {
 
 // ------- handles color form ------- //
 function handleColor(){
-	$("#colorForm").on('submit',function(event){
-		event.preventDefault();
+	$("#colorForm .button").on('click',function(event){
 
-		if (!$('input[name="colorChoice"]').is(':checked')) {
-            alert("Please choose a color theme!");
-         }
+		event.preventDefault();
+		let anythingChecked = false;
+
+		$('input[name="colorChoice"]').each(function(){
+			if ($(this).is(':checked')) {
+				anythingChecked = true;
+			}
+
+		})
+
+		if (!anythingChecked) {
+            // alert("Please choose a color theme!");
+			 swal({
+				text: "Please choose a color theme!",
+				button: "",
+				});    
+
+        }
        
 
         else {
@@ -207,13 +245,13 @@ function buildFlyer(){
    return    `<div class="black-results" id="section1">
 			    <div class="row">
 	
-					    <div class="col-6 flyer-box" id="flyer-capture">
+					    <div class="col-6 flyer-box outer" id="flyer-capture">
 					    
-					        <div id="flyer-top">
+					        <div id="flyer-top" class="inner">
 							    <h2 class="flyer-date">${store.userEventDate}</h2>
 							    <h2 class="flyer-time">${store.userEventTime}</h2>
 					        </div>
-					        <div id="circle">
+					        <div id="circle" class="inner">
 						        <h2 class="flyer-price">${store.userEventPrice}</h2>
 					        </div>
 					        <div id="flyer-center">
@@ -221,7 +259,7 @@ function buildFlyer(){
 						        <h1>${store.userEventName2}</h1>
 						        <h1>${store.userEventName3}</h1>
 						    </div>
-						    <span class="flyer-bottom" id="flyer-bottom"> 
+						    <span class="flyer-bottom inner" id="flyer-bottom"> 
 							    <h2 class="flyer-location">${store.userEventLocation1}</h2>
 							    <h2 class="flyer-location">${store.userEventLocation2}</h2>
 							    <h2 class="flyer-location">${store.userEventLocation3}</h2>
@@ -301,6 +339,9 @@ function restartFlyer(){
 }
 
 
+
+
+
 var downloadCounter = 0;
 
 
@@ -310,6 +351,7 @@ function handleDownload(){
 		// $("#modal-02 a").on ('click','#download', function(event){
 		console.log('download clicked');
 		console.log()
+
 
 
 		if (downloadCounter == 0) {
@@ -326,36 +368,35 @@ function handleDownload(){
 			}
 
 			html2canvas(element, {
-				scale: 11,
+				scale: 2,
+				scrollX: 0,
 				onrendered: myRenderFunction
 			});
 
-			$("#demo02")[0].click();
+			$("#loader-box").fadeIn(800).delay(5000).fadeOut('slow');
+
+			console.log("canvas");
+
+			var download = document.getElementById("download");
+			var imageFinal = document.getElementById("h2canvas").toDataURL("image/png")
+			.replace("image/png", "image/octet-stream");
+			download.setAttribute("href", imageFinal);
+
+
+			// var link = document.getElementById('flyer-box');
+			// link.setAttribute('download', 'MintyPaper.png');
+			// link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+			// link.click();
+
 		}
 
 		else {
-			$("#demo02")[0].click();
+			// $("#loader-box").fadeIn('slow').delay(4000).fadeOut('slow');
+			$("#demo02").click();
 		}
 
 	})
 }
-
-
-// function handleDownload(){
-// 	$("#js-flyer").on ('click','#download', function(event){
-// 		console.log('download clicked');
-// 	function openWin() {
-// 		var divText = document.getElementById("flyer-capture").outerHTML;
-// 		var myWindow = window.open('', '', 'width=3450,height=5250');
-// 		var doc = myWindow.document;
-// 		doc.open();
-// 		doc.write(divText);
-// 		doc.close();
-// 	}
-// 	openWin();
-// })
-// }
-
 
 
 

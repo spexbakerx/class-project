@@ -448,9 +448,14 @@ textarea {
 }
 
 
+
+/* Animated Modal Stylings
+-----------------------------------------------*/
+
 #animatedModal {
 	text-align: center;
 	padding-top: 10%;
+	z-index: -1;
 
 }
 
@@ -503,11 +508,64 @@ textarea {
 	text-align: center;
 }
 
+
+
+/* Alert Modal Stylings
+-----------------------------------------------*/
+
+.swal-modal {
+	background-color: #FF4100;
+	color: white;
+}
+
+.swal-text {
+	font-size: 35px;
+	color: white;
+	text-align: center;
+}
+
+.swal-button {
+	background-color: transparent;
+	border: 0px;
+	text-align: center;
+	box-shadow: none;
+}
+
+.swal-button:active {
+	background-color: transparent;
+	border: 0px;
+	box-shadow: none;
+}
+
+.swal-button:focus{
+	background-color: transparent;
+	border: 0px;
+	box-shadow: none;
+}
+
+.swal-button::before {
+	font-family: "Font Awesome 5 Free"; content: "\f057";
+	font-size: 55px;
+}
+
+.swal-footer {
+	text-align: center;
+}
+
+
 .results-black {
 	background-color: black;
 	padding-top: 2%;
 }
 
+
+.outer {
+    position: relative;
+}
+
+.inner {
+    position: absolute;
+}
 
 #js-flyer {
 	background-color: black;
@@ -528,6 +586,7 @@ textarea {
 	color: var(--color2);
 	background-color: var(--color1);
 	margin-left: 10%;
+
 }
 
 .flyer-box h1 {
@@ -556,6 +615,9 @@ textarea {
 /*    -webkit-transform: translate(-50%,-50%);*/
 	bottom: 5%;
 	font-size: 40%;
+  z-index: 1;
+  background-color: var(--color1);
+
 }
 
 #flyer-top {
@@ -567,6 +629,8 @@ textarea {
 	font-size: 40%;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	z-index: 1;
+	background-color: var(--color1);
 }
 
 #circle {
@@ -581,6 +645,8 @@ textarea {
   text-align: center;
   border: 1px solid var(--color2);
   line-height: 1.6;
+  z-index: 1;
+  background-color: var(--color1);
 }
 
 #flyer-center {
@@ -618,3 +684,132 @@ textarea {
 	margin-bottom: 40px;
 }*/
 
+
+/* load animation page */
+
+#loader-box {
+position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: black;
+    display: none;
+    z-index: 99;
+}
+
+#loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.box {
+  width: 120px;
+  height: 187px;
+  background-color: black;
+  position: absolute;
+  left: calc(45%);
+  top: calc(50%);
+  bottom: 50%;
+  margin: auto;
+}
+
+.box2 {
+  width: 120px;
+  height: 187px;
+  background-color: black;
+  position: absolute;
+  left: calc(45% + 15px);
+  top: calc(50% + 30px);
+  bottom: 50%;
+  margin: auto;
+}
+
+.box3 {
+  width: 120px;
+  height: 187px;
+  background-color: black;
+  position: absolute;
+  left: calc(45% + 30px);
+  top: calc(50% + 60px);
+  bottom: 50%;
+  margin: auto;
+}
+
+.top {
+  position: absolute;
+  height: 5px;
+  top: -5px;
+  background-color: white;
+  animation: 1s loadtop linear forwards;
+  animation-delay: 1s;
+}
+
+.right {
+  width: 5px;
+  height: 0;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: -5px;
+  animation: 1s 1s loadright linear forwards;
+  animation-delay: 2s;
+}
+
+.bottom {
+  position: absolute;
+  background-color: white;
+  width: 0;
+  height: 5px;
+  bottom: -5px;
+  right: 0;
+  animation: 1s 2s loadbottom linear forwards;
+  animation-delay: 3s;  
+}
+
+.left {
+  position: absolute;
+  width: 5px;
+  height: 0px;
+  bottom: 0;
+  left: -5px;
+  background-color: white;
+  animation: 1s 3s loadleft linear forwards;
+  animation-delay: 4s;  
+}
+
+@keyframes loadtop {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 125px;
+  }
+}
+@keyframes loadright {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 192px;
+  }
+}
+@keyframes loadbottom {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 125px;
+  }
+}
+@keyframes loadleft {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 192px;
+  }
+}
