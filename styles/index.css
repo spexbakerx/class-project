@@ -567,10 +567,10 @@ textarea {
     position: absolute;
 }
 
-/*#destination {
-	height: 487px;
-	width: 320px;
-}*/
+#destination {
+	background-color:black;
+	
+}
 
 #js-flyer {
 	background-color: black;

@@ -263,31 +263,19 @@ function buildFlyer(){
 							    <h2 class="flyer-location">${store.userEventLocation2}</h2>
 							    <h2 class="flyer-location">${store.userEventLocation3}</h2>
 						    </div>
-
 				 		</div>
-
-
 					    <div class="col-4" id="last">
 						    <button type="button" class="button colorful" id="download"><span>Download</span></button>
 						    <a href="#modal-02" id="demo02" class="button underline" style="display:none;">test 2</a>
 						    <button type="button" class="button underline restart-button"><span>Start Over</span></button>
 					    </div>
-
 					    
-
 			    </div>
-
-
-
 			  </div>
-
-
 			  <div id="modal-02">
-
 		        	<div id="btn-close-modal" class="close-modal-02"> 
 			            <button type="button" class="button underline close" style="color:black;text-align:center;"><div class="spin">&#x2715;</div></button></a>
 			        </div>		
-
 			        <div class="modal-content">
 			        	<p style="color:black;"> right click to save </p>
 			        	</br>
@@ -347,22 +335,17 @@ var downloadCounter = 0;
 // ------- saves flyer image on button click ------- //
 function handleDownload(){
 	$("#js-flyer").on ('click','#download', function(event){
-		// $("#modal-02 a").on ('click','#download', function(event){
-		console.log('download clicked');
-		console.log()
 
+		// if (downloadCounter == 0) {
 
+		// 	downloadCounter ++;
 
-		if (downloadCounter == 0) {
-
-			downloadCounter ++;
+			$("#loader-box").fadeIn('fast').delay(5000).fadeOut('slow');
 
 			// Get source element and destination div.
 			var element = document.getElementById('flyer-capture');
 			var destination = document.getElementById('destination');
-			// var tableImage;
 
-			document.location.href="#flyer-capture";
 
 			function myRenderFunction(canvas) {
 				// destination.append(canvas);
@@ -370,37 +353,24 @@ function handleDownload(){
 		        tableImage = canvas.toDataURL("image/png");	
 		        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');	
 
+		        // forces download of image
+    			download(tableImage);
+
 
 			}
 
 			html2canvas(element, {
-				scale: 5,
+				scale: 11,
 				onrendered: myRenderFunction
 			});
 
 
+		// }
 
-			$("#loader-box").fadeIn(800).delay(5000).fadeOut('slow');
-
-			console.log("canvas");
-
-			// var download = document.getElementById("download");
-			// var imageFinal = document.getElementById("h2canvas").toDataURL("image/png")
-			// .replace("image/png", "image/octet-stream");
-			// download.setAttribute("href", imageFinal);
-
-
-			// var link = document.getElementById('flyer-box');
-			// link.setAttribute('download', 'MintyPaper.png');
-			// link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-			// link.click();
-
-		}
-
-		else {
-			// $("#loader-box").fadeIn('slow').delay(4000).fadeOut('slow');
-			$("#demo02").click();
-		}
+		// else {
+		// 	// $("#loader-box").fadeIn('slow').delay(4000).fadeOut('slow');
+		// 	$("#demo02").click();
+		// }
 
 	})
 }
@@ -443,4 +413,3 @@ handleColor();
 handleFinal();
 handleDownload();
 restartFlyer();
-
