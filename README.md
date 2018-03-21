@@ -1,9 +1,10 @@
 # Post.er
+
+![Screenshot](screenshots/screenshots.gif)
+
 Post.er is a web app allows non-designers to create trendy flyers for their events in a few easy steps. Styles based on 2017 TRENDY GOOGLE FONTS COMBINATIONS by [Great Simple](http://fonts.greatsimple.io/).
 
 [Live Demo](https://spexbakerx.github.io/post.er/)
-
-![Screenshot](screenshots/screenshots.gif)
 
 
 ## Table of Contents

@@ -1,4 +1,4 @@
-
+// 
 
  /* global html2canvas */
 
@@ -29,38 +29,61 @@ const colorPurple = "#7814b9";
 const colorBlue = "#232ce1";
 
 
+
 // ------- handles font form ------- //
-function handleFont(){
-	$("#fontForm .button").on('click',function(event){
-		event.preventDefault();
-		let anythingFontChecked = false;
+// function handleFont(){
+
+// 	$('input[name=fontChoice]').on('click', function(event){
+// 		event.preventDefault();
+// 		$('html,body').animate({scrollTop: $("#section3").offset().top}, 1500, 'easeInOutExpo');
+// 	})
+
+// 	$("#fontForm .button").on('click',function(event){
+// 		let anythingFontChecked = false;
 
 
-		$('input[name="fontChoice"]').each(function(){
-			if ($(this).is(':checked')) {
-				anythingFontChecked = true;
-			}
+// 		$('input[name="fontChoice"]').each(function(){
+// 			if ($(this).is(':checked')) {
+// 				anythingFontChecked = true;
+// 			}
 
-		})
+// 		})
 
-		if (!anythingFontChecked) {
-            // alert("Please choose a font theme!");
-            // swal("Please choose a font theme!");
-			 swal({
-				text: "Please choose a font theme!",
-				button: "",
-				});         
-         }
+// 		if (!anythingFontChecked) {
+// 			 swal({
+// 				text: "Please choose a font theme!",
+// 				button: "",
+// 				});         
+//          }
        
 
-        else {
-		    let chosenFont = $("input[type='radio'][name='fontChoice']:checked").val();
-			assignFont(chosenFont);
-			$('html,body').animate({scrollTop: $("#section3").offset().top}, 1500, 'easeInOutExpo');
-		}
+//         else {
+// 		    let chosenFont = $("input[type='radio'][name='fontChoice']:checked").val();
+// 			assignFont(chosenFont);
+// 			$('html,body').animate({scrollTop: $("#section3").offset().top}, 1500, 'easeInOutExpo');
+// 		}
 
 
-	});
+// 	});
+// }
+
+// ------- handles font form ------- //
+function handleFont(){
+
+	$('input[name=fontChoice]').on('click', function(event){
+		event.preventDefault();
+	    let chosenFont = $("input[type='radio'][name='fontChoice']:checked").val();
+		assignFont(chosenFont);
+		$('html,body').animate({scrollTop: $("#section3").offset().top}, 1500, 'easeInOutExpo');
+	})
+
+	$("#fontForm .button").on('click',function(event){
+		
+		 swal ({
+			text: "Please choose a font theme!",
+			button: "",
+		});         
+     })
 }
 
 
@@ -120,43 +143,69 @@ function getApi2(font) {
 
 
 // ------- handles color form ------- //
-function handleColor(){
-	$("#colorForm .button").on('click',function(event){
+// function handleColor(){
+// 	$("#colorForm .button").on('click',function(event){
 
-		event.preventDefault();
-		let anythingChecked = false;
+// 		event.preventDefault();
+// 		let anythingChecked = false;
 
-		$('input[name="colorChoice"]').each(function(){
-			if ($(this).is(':checked')) {
-				anythingChecked = true;
-			}
+// 		$('input[name="colorChoice"]').each(function(){
+// 			if ($(this).is(':checked')) {
+// 				anythingChecked = true;
+// 			}
 
-		})
+// 		})
 
-		if (!anythingChecked) {
-            // alert("Please choose a color theme!");
-			 swal({
-				text: "Please choose a color theme!",
-				button: "",
-				});    
+// 		if (!anythingChecked) {
+//             // alert("Please choose a color theme!");
+// 			 swal({
+// 				text: "Please choose a color theme!",
+// 				button: "",
+// 				});    
 
-        }
+//         }
        
 
-        else {
-			let chosenColor = $("input[type='radio'][name='colorChoice']:checked").val();
-			assignColor(chosenColor);
-			$('html,body').animate({scrollTop: $("#section4").offset().top}, 1500, 'easeInOutExpo');
-			$(':root').css({'--color1':''+store.userColor1+''});
-			$(':root').css({'--color2':''+store.userColor2+''});
-			if (store.userColor1 == "#d4d4d4") {
-				$('.flyer-box').css({'background-color':'linear-gradient('+store.userColor1+','+store.userColor2+')'});
-			}
-			else {
-				$('.flyer-box').css({'background':''+store.userColor1+''});
-			}
+//         else {
+// 			let chosenColor = $("input[type='radio'][name='colorChoice']:checked").val();
+// 			assignColor(chosenColor);
+// 			$('html,body').animate({scrollTop: $("#section4").offset().top}, 1500, 'easeInOutExpo');
+// 			$(':root').css({'--color1':''+store.userColor1+''});
+// 			$(':root').css({'--color2':''+store.userColor2+''});
+// 			if (store.userColor1 == "#d4d4d4") {
+// 				$('.flyer-box').css({'background-color':'linear-gradient('+store.userColor1+','+store.userColor2+')'});
+// 			}
+// 			else {
+// 				$('.flyer-box').css({'background':''+store.userColor1+''});
+// 			}
+// 		}
+// 	});
+// }
+
+// ------- handles color form ------- //
+function handleColor(){
+
+	$('input[name=colorChoice]').on('click', function(event){
+		let chosenColor = $("input[type='radio'][name='colorChoice']:checked").val();
+		assignColor(chosenColor);
+		$('html,body').animate({scrollTop: $("#section4").offset().top}, 1500, 'easeInOutExpo');
+		$(':root').css({'--color1':''+store.userColor1+''});
+		$(':root').css({'--color2':''+store.userColor2+''});
+		if (store.userColor1 == "#d4d4d4") {
+			$('.flyer-box').css({'background-color':'linear-gradient('+store.userColor1+','+store.userColor2+')'});
 		}
-	});
+		else {
+			$('.flyer-box').css({'background':''+store.userColor1+''});
+		}
+	})
+
+
+	$("#colorForm .button").on('click',function(event){
+		 swal({
+			text: "Please choose a color theme!",
+			button: "",
+			});    
+    })      
 }
 
 
@@ -265,7 +314,7 @@ function buildFlyer(){
 						    </div>
 				 		</div>
 					    <div class="col-4" id="last">
-						    <button type="button" class="button colorful" id="download"><span>Download</span></button>
+						    <button type="button" class="button colorful3" id="download"><span>Download</span></button>
 						    <a href="#modal-02" id="demo02" class="button underline" style="display:none;">test 2</a>
 						    <button type="button" class="button underline restart-button"><span>Start Over</span></button>
 					    </div>
@@ -305,7 +354,7 @@ function displayFlyerPage(){
 	});
 
 
-	document.querySelector('.button.colorful').onmousemove = (e) => {
+	document.querySelector('.button.colorful3').onmousemove = (e) => {
 		const x = e.pageX - e.target.offsetLeft
 		const y = e.pageY - e.target.offsetTop
 		e.target.style.setProperty('--x', `${ x }px`)
@@ -392,15 +441,25 @@ $(function() {
 });
 
 
-// ------- keeps track of where mouse is ------- //
+// ------- keeps track of where mouse is for gradient buttons------- //
+
 
 document.querySelector('.button.colorful').onmousemove = (e) => {
   const x = e.pageX - e.target.offsetLeft
   const y = e.pageY - e.target.offsetTop
   e.target.style.setProperty('--x', `${ x }px`)
   e.target.style.setProperty('--y', `${ y }px`)
- 
 }
+
+document.querySelector('.button.colorful2').onmousemove = (e) => {
+  const x = e.pageX - e.target.offsetLeft
+  const y = e.pageY - e.target.offsetTop
+  e.target.style.setProperty('--x', `${ x }px`)
+  e.target.style.setProperty('--y', `${ y }px`)
+}
+
+
+
 
 
 $("#main").show();

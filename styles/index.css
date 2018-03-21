@@ -180,7 +180,6 @@ button.underline.close {
     transform: rotate(720deg);
 }
 
-
 .button.colorful {
 	position: relative;
 	appearance: none;
@@ -217,6 +216,82 @@ button.underline.close {
 .button.colorful:hover::before {
 	--size: 400px;
 }
+
+.button.colorful2 {
+	position: relative;
+	appearance: none;
+	background: #E53900;
+	padding: 1em 2em;
+	border: 1px solid white;
+	color: white;
+	font-size: 1.2em;
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+	border-radius: 100px;
+	width: 100%;
+	margin-top: 40px;
+}
+	
+.button.colorful2 span {
+	position: relative;
+	pointer-events: none;
+}
+	
+.button.colorful2::before {
+--size: 0;
+	content: '';
+	position: absolute;
+	left: var(--x);
+	top: var(--y);
+	width: var(--size);
+	height: var(--size);
+	background: radial-gradient(circle closest-side, #232ce1, transparent);
+	transform: translate(-50%, -50%);
+	transition: width .2s ease, height .2s ease;
+}
+	
+.button.colorful2:hover::before {
+	--size: 400px;
+}
+
+.button.colorful3 {
+	position: relative;
+	appearance: none;
+	background: #FF4100;
+	padding: 1em 2em;
+	border: none;
+	color: white;
+	font-size: 1.2em;
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+	border-radius: 100px;
+	width: 100%;
+}
+	
+.button.colorful3 span {
+	position: relative;
+	pointer-events: none;
+}
+	
+.button.colorful3::before {
+--size: 0;
+	content: '';
+	position: absolute;
+	left: var(--x);
+	top: var(--y);
+	width: var(--size);
+	height: var(--size);
+	background: radial-gradient(circle closest-side, #2637DE, transparent);
+	transform: translate(-50%, -50%);
+	transition: width .2s ease, height .2s ease;
+}
+	
+.button.colorful3:hover::before {
+	--size: 400px;
+}
+
 
 input,
 label,
