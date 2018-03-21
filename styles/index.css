@@ -122,15 +122,15 @@ h1 {
 }
 
 .grad3 {
-	background: linear-gradient(#65119B, #FF4100);
+	background: linear-gradient(#65119B, #E53900);
 }
 
 .red {
-	background-color: #FF4100;
+	background-color: #E53900;
 }
 
 .grad4 {
-	background: linear-gradient(#FF4100, black);
+	background: linear-gradient(#E53900, black);
 	visibility: none;
 }
 
@@ -454,14 +454,14 @@ textarea {
 
 #animatedModal {
 	text-align: center;
-	padding-top: 10%;
+	padding-top: 5%;
 	z-index: -1;
 
 }
 
 #animatedModal2 {
 	text-align: center;
-	padding-top: 10%;
+	padding-top: 5%;
 
 }
 
@@ -514,7 +514,7 @@ textarea {
 -----------------------------------------------*/
 
 .swal-modal {
-	background-color: #FF4100;
+	background-color: #E53900;
 	color: white;
 }
 

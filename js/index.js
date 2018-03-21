@@ -360,7 +360,7 @@ function handleDownload(){
 			}
 
 			html2canvas(element, {
-				scale: 11,
+				scale: 10.78125,
 				onrendered: myRenderFunction
 			});
 
