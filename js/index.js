@@ -1,5 +1,7 @@
  /* global html2canvas */
 
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 // ------- state management ------- //
 const store = {
 	userFont1: "",
@@ -260,14 +262,46 @@ function restartFlyer(){
   })
 }
 
+const downloadCounter = 0;
 
 // ------- saves flyer image on button click ------- //
 function handleDownload(){
 	$("#js-flyer").on ('click','#download', function(event){
 
-		// if (downloadCounter == 0) {
+		
+		if (isMobile) {
+			if (downloadCounter == 0) {
+				downloadCounter ++;
 
-		// 	downloadCounter ++;
+				var element = document.getElementById('flyer-capture');
+				var destination = document.getElementById('destination');
+
+
+				function myRenderFunction(canvas) {
+					// destination.append(canvas);
+
+			        tableImage = canvas.toDataURL("image/png");	
+			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
+				}
+
+				html2canvas(element, {
+					scale: 10.78125,
+					onrendered: myRenderFunction
+				});
+
+			}
+
+			else {
+			// $("#loader-box").fadeIn('slow').delay(4000).fadeOut('slow');
+				$("#demo02").click();
+			}
+
+		}
+
+
+		else {
+
+			console.log('not mobile');
 
 			$("#loader-box").fadeIn('fast').delay(5000).fadeOut('slow');
 
@@ -292,6 +326,7 @@ function handleDownload(){
 			});
 
 
+		}
 			// }
 
 			// else {
