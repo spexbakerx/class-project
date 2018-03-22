@@ -31,6 +31,7 @@ The final downloaded .png file size is equivalent to an a4 (11in x 17in) poster 
 * html2canvas
 * npm
 * download.js
+* datedropper
 
 
 ## Browser compatibility ##
@@ -47,3 +48,4 @@ Html2canvas is highly experimental, so bugs are still being worked out. This app
 - [downloadjs](http://danml.com/download.html)
 - [animatedModal.js](http://joaopereirawd.github.io/animatedModal.js/)
 - [SweetAlert](https://sweetalert.js.org/)
+- [datedropper](http://felicegattuso.com/projects/datedropper/)

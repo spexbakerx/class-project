@@ -15,8 +15,8 @@
  	<link id="cssMain" rel="stylesheet" href="styles/index.css" />
  	<link rel="stylesheet" href="styles/animate.min.css">
  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
-
-
+ 	<link rel="stylesheet" href="styles/datedropper.css" type="text/css" />
+	<link rel="stylesheet" href="styles/my-style.css" type="text/css" />
 
 
 </head>
@@ -25,25 +25,21 @@
 
 <div id="main" class="animate-bottom">
 
-	<!-- Sticky Navigation bar -->
-<div class="col-12 navbar">
-	
+
+		<!-- Sticky Navigation bar -->
+	<div class="col-12 navbar">
 		<a href="#section1"><image class="logo" src="images/logo.png"></a>
 		<a id="demo01" href="#animatedModal"><div class="oval"><span class="info">info</span></div></a>
-
-</div>
-
+	</div>
 
 
     <!--info modal-->
     <div id="animatedModal" >
         <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
         
-        	<div id="btn-close-modal" class="close-animatedModal"> 
-            <button type="button" class="button underline close"><div class="spin">&#x2715;</div></button></a>
+    	<div id="btn-close-modal" class="close-animatedModal"> 
+	        <button type="button" class="button underline close"><div class="spin">&#x2715;</div></button></a>
         </div>
-        
-
         <div class="modal-content">
        		<p>Post.er uses the Google Font API</p>
        		<p>and is based on <a href="http://fonts.greatsimple.io/">this resource by Great Simple.</a></p>
@@ -59,14 +55,7 @@
     </div>
 
 
-
-
-
-
-
 	<!-- Section 1 (home) -->
-
-
 	<div class="section black" id="section1">
 		<div class="row">
     	<div class="col-12">	
@@ -81,13 +70,6 @@
 	</div>
 
 
-
-
-
-
-
-
-
 	<div class="section grad1"></div>
 
 
@@ -96,7 +78,6 @@
 		<div class="row">
 		<div class="col-12">
 		<h1><span style="font-weight: bold;">Step 1:</span> Choose fonts</h1>
-
 		<form id="fontForm" action="#section3">
 			<fieldset class="form__options">
 				<div class="col-4 font1">
@@ -104,7 +85,6 @@
 					<input type="radio" name="fontChoice" id="r1" value="1" required>
 					<label for="r1">1 –– </br> Eczar + Work Sans <image class="center" src="images/ezcarWS@2x.png"></label>
 				</p>
-
 				</div>
 				<div class="col-4 font1">
 				<p class="form__answer">
@@ -112,14 +92,12 @@
 					<label for="r2">2 –– </br> Archivo Black + Tenor <image class="center" src="images/archivotenor@2x.png"></label>
 				</p>
 				</div>
-
 				<div class="col-4 font1">
 				<p class="form__answer">
 					<input type="radio" name="fontChoice" id="r3" value="3" required>
 					<label for="r3">3 –– </br> Rubik + Roboto Mono <image class="center" src="images/rubikRM@2x.png"></label>
 				</p>
-				</div>
-				
+				</div>		
 				<div class="nopadding-left col-4 ">
 					<button type="submit" class="button underline"><strong>Next:</strong> Color</button>
 				</div>
@@ -133,15 +111,11 @@
 	<div class="section grad2"></div>
 
 
-
-
-
 	<!-- Section 3 (colors) -->
 	<div class="section purple" id="section3">
 		<div class="row">
 		<div class="col-12">
 		<h1><span style="font-weight: bold;">Step 2:</span> Choose colors</h1>
-
 		<form id="colorForm" >
 			<fieldset class="form__options">
 				<div class="col-4 color1">
@@ -162,7 +136,6 @@
 					<label for="r6" >3 –– </br> Blue + Gray <image class="center" src="images/blue-lines@2x.png"></label>
 				</p>
 				</div>
-
 				<div class="nopadding-left col-4 ">
 					<button type="submit" class="button underline"><strong>Next:</strong> Info</button>
 				</div>
@@ -175,15 +148,14 @@
 
 	<div class="section grad3"></div>
 
+
 	<!-- Section 4 (info) -->
 	<div class="section red last" id="section4">
 		<div class="row">
 		<div class="col-12">
 		<h1><span style="font-weight: bold;">Step 3:</span> Info </h1>
-
 		<form id="infoForm">
 			<fieldset class="form__options__wide">
-
 				<div class="col-4">
 				<p class="form__answer wide"> 1 –– </br> Event name </br> (or band names)
 					<input type="text" name="eventName1" id="eventName1" placeholder="Line 1 (headliner)" required>
@@ -191,15 +163,13 @@
 					<input type="text" name="eventName3" id="eventName3" placeholder="Line 3">
 				</p>
 				</div>
-
 				<div class="col-4">
 				<p class="form__answer"> 2 –– </br> Event time + price + date </br></br>
 					<input type="text" name="eventTime" id="eventTime" placeholder="12pm">
 					<input type="text" name="eventPrice" id="eventPrice" placeholder="$10">
-					<input type="text" name="eventDate" id="eventDate" placeholder="4/20/18">
+					<input type="text" name="eventDate" id="eventDate" data-theme="my-style" data-large-default="true">
 				</p>	
 				</div>	
-
 				<div class="col-4">		
 				<p class="form__answer"> 5 –– </br> Event location </br> </br> 
 					<input type="text" name="eventLocation1" id="eventLocation1" placeholder="Name of venue" required>
@@ -216,11 +186,11 @@
 		</div>			
 	</div>
 
+
 <div class="section grad4"></div>
 
-
+<!-- dynamic generated flyer goes here -->
 <div id="js-flyer"></div>
-
 
 
 	<!-- animation page  -->
@@ -258,13 +228,9 @@
 <script type="text/javascript" src="js/animatedModal.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="js/download.js"></script>
+<script type="text/javascript" src="js/download.js"></script>
+<script type="text/javascript" src="js/datedropper.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script> -->
-
-
-
-
-
 
 <script>
 var myVar;
@@ -278,7 +244,6 @@ function showPage() {
 }
 </script>
 
-
 <script>
 	$("#demo01").animatedModal({
 
@@ -287,11 +252,6 @@ function showPage() {
     color: 'black',
 	});
 </script>
-
-
-
-
-
 
 </body>
 </html>

@@ -12,33 +12,42 @@
 
 body {
 	background-color: black;
+	font-family: "Helvetica", sans-serif;
+	color: white;
+	font-size: 18px;s
 }
 
 #main {
 	display: none;
 }
 
+h1 {
+	font-size: 60px;
+	font-weight: 100;
+}
+
+/* animation for page load in
+-----------------------------------------------*/
 .animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
+	position: relative;
+	-webkit-animation-name: animatebottom;
+	-webkit-animation-duration: 1s;
+	animation-name: animatebottom;
+	animation-duration: 1s
 }
 
 @-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
+	from { bottom:-100px; opacity:0 } 
+	to { bottom:0px; opacity:1 }
 }
 
 @keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
+	from{ bottom:-100px; opacity:0 } 
+	to{ bottom:0; opacity:1 }
 }
 
 .navbar {
-
-		position: fixed;
+	position: fixed;
 	height: 50px;
 	color: white;
 	list-style-type: none;
@@ -47,19 +56,17 @@ body {
 	height: 100px;
 }
 
-
-
 .logo {
 	width: 140px;
 }
 
 .oval {
-  width: 100px;
-  height: 50px;
-  background: none;
-  border-radius: 50%;
-  border: 1px solid white;
-  float: right;
+	width: 100px;
+	height: 50px;
+	background: none;
+	border-radius: 50%;
+	border: 1px solid white;
+	float: right;
 }
 
 .info {
@@ -77,13 +84,6 @@ body {
 	border: 1px solid white;
 }
 
-body {
-	font-family: "Helvetica", sans-serif;
-	color: white;
-	font-size: 18px;
-
-}
-
 
 .section {
 	margin:0px;
@@ -91,13 +91,6 @@ body {
     width:100%;
     float:left;
     padding-top: 8%;
-}
-
-
-
-h1 {
-	font-size: 60px;
-	font-weight: 100;
 }
 
 .black {
@@ -134,19 +127,20 @@ h1 {
 	visibility: none;
 }
 
+
+/* button styles
+-----------------------------------------------*/
+
 .button {
 	font-size: 35px;
 }
 
-
 .button:hover  {
 	color: black:
-
 }
 
 .button.underline:active  {
 	color: black:
-
 }
 
 .button.underline  {
@@ -157,7 +151,7 @@ h1 {
     background: none;
     cursor:pointer;
     margin-top: 80px;
-    	transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
 button.underline.close {
@@ -165,9 +159,7 @@ button.underline.close {
     margin-bottom: 50px;
     border-radius: border-radius: 50%;
     margin-top: 50px;
-
 }
-
 
 .spin {
 	border-radius: border-radius: 50%;
@@ -201,7 +193,7 @@ button.underline.close {
 }
 	
 .button.colorful::before {
---size: 0;
+	--size: 0;
 	content: '';
 	position: absolute;
 	left: var(--x);
@@ -239,7 +231,7 @@ button.underline.close {
 }
 	
 .button.colorful2::before {
---size: 0;
+	--size: 0;
 	content: '';
 	position: absolute;
 	left: var(--x);
@@ -292,35 +284,33 @@ button.underline.close {
 	--size: 400px;
 }
 
-
 input,
 label,
 select,
 button,
 textarea
-{
-	margin:0;
-	border:0;
-	padding:0;
-	display:inline-block;
-	vertical-align:middle;
-	white-space:normal;
-	background:none;
-	line-height:1;
-	
-	/* Browsers have different default form fonts */
-	font-size:18px;
-	font-family:"Helvectica", sans-serif;
-	outline: 0;
+	{
+		margin:0;
+		border:0;
+		padding:0;
+		display:inline-block;
+		vertical-align:middle;
+		white-space:normal;
+		background:none;
+		line-height:1;
+		
+		/* Browsers have different default form fonts */
+		font-size:18px;
+		font-family:"Helvectica", sans-serif;
+		outline: 0;
 }
 
 /* Remove the stupid outer glow in Webkit */
-input:focus
-{
-	outline:0;
+input:focus {
+ 	outline:0;
 }
 
-/* Box Sizing Reset
+/* Reset styles
 -----------------------------------------------*/
 
 /* All of our custom controls should be what we expect them to be */
@@ -367,7 +357,6 @@ input[type="submit"]
 	background:none;
 
 }
-
 
 
 /* Form styling
@@ -471,8 +460,6 @@ label:active {
 }
 
 
-
-
 /* Input style */
 
 input[type="radio"] {
@@ -491,7 +478,6 @@ input[type="radio"]:checked ~ label {
 	background-color: black;
 	transition: all .5s ease-in-out;
 	color: white;
-
 }
 
 input[type=text] {
@@ -502,6 +488,7 @@ input[type=text] {
 	width: 90%;
 	transition: all .5s ease-in-out;
 	color: white;
+
 }
 
 input[type=text]:focus {
@@ -510,7 +497,7 @@ color: black;
 }
 
 input[type=text]:visited {
-color: white;
+color: black;
 }
 
 textarea {
@@ -521,7 +508,6 @@ textarea {
 	width: 90%;
 	height: 127px;
 }
-
 
 
 /* Animated Modal Stylings
@@ -582,7 +568,6 @@ textarea {
 #btn-close-modal {
 	text-align: center;
 }
-
 
 
 /* Alert Modal Stylings
@@ -647,6 +632,9 @@ textarea {
 	
 }
 
+/* Generated flyer styles
+-----------------------------------------------*/
+
 #js-flyer {
 	background-color: black;
 	margin:0px;
@@ -667,8 +655,6 @@ textarea {
 	background-color: var(--color1);
 	margin-left: 10%;
 	padding: 0px;
-
-
 }
 
 .flyer-box h1 {
@@ -676,7 +662,6 @@ textarea {
     font-size: 210%;
     margin: 0px;
     font-family: var(--font1);
-
 }
 
 .flyer-box h1:nth-of-type(2) {
@@ -687,7 +672,6 @@ textarea {
 .flyer-box h2 {
     font-family: var(--font2);
     font-weight: normal;
-
 }
 
 .flyer-bottom {
@@ -698,8 +682,6 @@ textarea {
 	z-index: 1;
 	background-color: var(--color1);
 	width: 100%;
-
-
 }
 
 #flyer-top {
@@ -711,7 +693,6 @@ textarea {
 	z-index: 1;
 	background-color: var(--color1);
 	width: 100%;
-
 }
 
 #circle {
@@ -728,13 +709,11 @@ textarea {
   line-height: 1.6;
   z-index: 1;
   background-color: var(--color1);
-
 }
 
 #flyer-center {
 	padding-top: 50%;
 	line-height: 1.2;
-
 }
 
 #last {
@@ -762,10 +741,6 @@ textarea {
 	color: #4C4C4C;
 
 }
-
-/*#last button {
-	margin-bottom: 40px;
-}*/
 
 
 /* load animation page */
