@@ -170,12 +170,17 @@ function handleFinal(){
 			$("#flyer-center h1:nth-of-type(1)").css("font-weight", "bold");
 			$("#flyer-center h1:nth-of-type(3)").css("font-weight", "bold");
 			$("#flyer-center h2").css("font-weight", "normal");
+			$("#flyer-bottom h2 span").css("border-bottom", "1px solid var(--color2)");
+    		$("#flyer-bottom h2 span").css("padding-bottom", "1%");
+    		$("#circle h2.flyer-price").css("font-family", "var(--font1)");
+    		$("#circle h2.flyer-price").css("font-weight", "bold");
+    		$("#circle h2.flyer-price").css("line-height", "1");
 		}
 		else if (store.userFont1 == "Archivo Black") {
 			$("#flyer-center h1").css("text-transform", "uppercase");
 			$("#flyer-center h1").css("font-weight", "900");
 			$("#flyer-center h1:nth-of-type(2)").css("font-weight", "normal");
-			$("#flyer-top h2.flyer-date").css("font-family", "var(--font2);");
+			$("#flyer-top h2.flyer-date").css("font-family", "var(--font1)");
 			$("#flyer-top h2.flyer-date").css("text-transform", "uppercase");
 			$("#flyer-top h2.flyer-date").css("font-weight", "900");
 		}
@@ -206,9 +211,9 @@ function buildFlyer(){
 						        <h1>${store.userEventName3}</h1>
 						    </div>
 						    <div class="flyer-bottom inner" id="flyer-bottom"> 
-							    <h2 class="flyer-location">${store.userEventLocation1}</h2>
-							    <h2 class="flyer-location">${store.userEventLocation2}</h2>
-							    <h2 class="flyer-location">${store.userEventLocation3}</h2>
+							    <h2 class="flyer-location"><span>${store.userEventLocation1}</span</h2>
+							    <h2 class="flyer-location"><span>${store.userEventLocation2}</span></h2>
+							    <h2 class="flyer-location"><span>${store.userEventLocation3}</span></h2>
 						    </div>
 				 		</div>
 					    <div class="col-4" id="last">
@@ -304,7 +309,6 @@ function handleDownload(){
 
 		else {
 
-			console.log('not mobile');
 
 			$("#loader-box").fadeIn('fast').delay(5000).fadeOut('slow');
 
@@ -312,18 +316,39 @@ function handleDownload(){
 			var element = document.getElementById('flyer-capture');
 			var destination = document.getElementById('destination');
 
+			function hiddenClone(element){
+			  // Create clone of element
+			  var clone = element.cloneNode(true);
+
+			  // Position element relatively within the 
+			  // body but still out of the viewport
+			  var style = clone.style;
+			  style.position = 'relative';
+			  style.top = window.innerHeight + 'px';
+			  style.left = 0;
+
+			  // Append clone to body and return the clone
+			  document.body.appendChild(clone);
+			  return clone;
+			}
+
+			var offScreen = document.querySelector('#flyer-capture');
+
+			// Clone off-screen element
+			var clone = hiddenClone(offScreen);		
 
 			function myRenderFunction(canvas) {
 				// destination.append(canvas);
 
 		        tableImage = canvas.toDataURL("image/png");	
 		        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');	
+		        document.body.removeChild(clone);
 
 		        // forces download of image
     			download(tableImage);
 			}
 
-			html2canvas(element, {
+			html2canvas(clone, {
 				scale: 10.78125,
 				onrendered: myRenderFunction
 			});
