@@ -109,12 +109,10 @@ function handleColor(){
 		$('html,body').animate({scrollTop: $("#section4").offset().top}, 1500, 'easeInOutExpo');
 		$(':root').css({'--color1':''+store.userColor1+''});
 		$(':root').css({'--color2':''+store.userColor2+''});
-		if (store.userColor1 == "#d4d4d4") {
-			$('.flyer-box').css({'background-color':'linear-gradient('+store.userColor1+','+store.userColor2+')'});
-		}
-		else {
-			$('.flyer-box').css({'background':''+store.userColor1+''});
-		}
+
+		// else {
+		// 	$('#flyer-capture').css({'background-color':''+store.userColor1+''});
+		// }
 	})
 	$("#colorForm .button").on('click',function(event){
 		 swal({
@@ -155,6 +153,7 @@ function handleFinal(){
 		store.userEventLocation1 = document.getElementById("eventLocation1").value;
 		store.userEventLocation2 = document.getElementById("eventLocation2").value;
 		store.userEventLocation3 = document.getElementById("eventLocation3").value;
+		console.log(store.userColor1);
 		buildFlyer();
 		displayFlyerPage();
 		event.preventDefault();
@@ -188,6 +187,11 @@ function handleFinal(){
 		else if (store.userEventPrice == "") {
 			$("#circle").css("display", "none");
 		}
+
+		else if (store.userColor1 == "#d4d4d4") {
+			$('#flyer-capture .flyer-box').css('background', 'linear-gradient('+store.userColor1+','+store.userColor2+')');
+			$("#flyer-capture .col-6.flyer-box.outer").css("background-color", "black");
+		}
 	});
 }
 
@@ -211,7 +215,7 @@ function buildFlyer(){
 						        <h1>${store.userEventName3}</h1>
 						    </div>
 						    <div class="flyer-bottom inner" id="flyer-bottom"> 
-							    <h2 class="flyer-location"><span>${store.userEventLocation1}</span</h2>
+							    <h2 class="flyer-location"><span>${store.userEventLocation1}</span></h2>
 							    <h2 class="flyer-location"><span>${store.userEventLocation2}</span></h2>
 							    <h2 class="flyer-location"><span>${store.userEventLocation3}</span></h2>
 						    </div>

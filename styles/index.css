@@ -678,6 +678,7 @@ textarea {
 .flyer-box h2 {
     font-family: var(--font2);
     font-weight: normal;
+    line-height: 1;
 }
 
 .flyer-bottom {
