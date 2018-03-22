@@ -1,6 +1,7 @@
  /* global html2canvas */
 
-var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const isMobile = (window.innerWidth <= 800 && window.innerHeight <= 600);
 
 // ------- state management ------- //
 const store = {
@@ -219,10 +220,10 @@ function buildFlyer(){
 			  </div>
 			  <div id="modal-02">
 		        	<div id="btn-close-modal" class="close-modal-02"> 
-			            <button type="button" class="button underline close" style="color:black;text-align:center;"><div class="spin">&#x2715;</div></button></a>
+			            <button type="button" class="button underline close" style="color:white;text-align:center;"><div class="spin">&#x2715;</div></button></a>
 			        </div>		
 			        <div class="modal-content">
-			        	<p style="color:black;"> right click to save </p>
+			        	<p style="color:white;"> touch & hold image to save! </p>
 			        	</br>
 			    		<div id="destination"></div>
 			    	</div> 	
@@ -241,7 +242,7 @@ function displayFlyerPage(){
 		animatedIn: 'slideInRight',
 	    animatedOut: 'slideOutRight',
 	    animationDuration: '1s',
-	    color: 'white',
+	    color: 'black',
 	});
 
 	// ------- gradient button button ------- //
@@ -262,16 +263,18 @@ function restartFlyer(){
   })
 }
 
-const downloadCounter = 0;
+var downloadCounter = 0;
 
 // ------- saves flyer image on button click ------- //
 function handleDownload(){
 	$("#js-flyer").on ('click','#download', function(event){
 
+
 		
 		if (isMobile) {
 			if (downloadCounter == 0) {
 				downloadCounter ++;
+				console.log(downloadCounter);
 
 				var element = document.getElementById('flyer-capture');
 				var destination = document.getElementById('destination');
@@ -282,6 +285,7 @@ function handleDownload(){
 
 			        tableImage = canvas.toDataURL("image/png");	
 			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
+			        $("#demo02").click();
 				}
 
 				html2canvas(element, {
@@ -292,7 +296,6 @@ function handleDownload(){
 			}
 
 			else {
-			// $("#loader-box").fadeIn('slow').delay(4000).fadeOut('slow');
 				$("#demo02").click();
 			}
 
@@ -327,12 +330,6 @@ function handleDownload(){
 
 
 		}
-			// }
-
-			// else {
-			// 	// $("#loader-box").fadeIn('slow').delay(4000).fadeOut('slow');
-			// 	$("#demo02").click();
-			// }
 
 	})
 }
