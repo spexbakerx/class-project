@@ -182,6 +182,7 @@ function handleFinal(){
 			$("#flyer-top h2.flyer-date").css("font-family", "var(--font1)");
 			$("#flyer-top h2.flyer-date").css("text-transform", "uppercase");
 			$("#flyer-top h2.flyer-date").css("font-weight", "900");
+
 		}
 
 		else if (store.userEventPrice == "") {
