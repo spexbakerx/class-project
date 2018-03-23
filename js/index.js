@@ -315,8 +315,8 @@ function handleDownload(){
 
 			        tableImage = canvas.toDataURL("image/png");	
 			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
-			        $("#demo02").click();
 			        document.body.removeChild(clone);
+			        $("#demo02").click();
 				}
 
 				html2canvas(clone, {
