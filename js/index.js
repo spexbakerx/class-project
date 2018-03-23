@@ -170,7 +170,7 @@ function handleFinal(){
 			$("#flyer-center h1:nth-of-type(3)").css("font-weight", "bold");
 			$("#flyer-center h2").css("font-weight", "normal");
 			$("#flyer-bottom h2 span").css("border-bottom", "1px solid var(--color2)");
-    		$("#flyer-bottom h2 span").css("padding-bottom", "1%");
+    		$("#flyer-bottom h2 span").css("padding-bottom", ".5%");
     		$("#circle h2.flyer-price").css("font-family", "var(--font1)");
     		$("#circle h2.flyer-price").css("font-weight", "bold");
     		$("#circle h2.flyer-price").css("line-height", "1");
@@ -318,8 +318,8 @@ function handleDownload(){
 
 			        tableImage = canvas.toDataURL("image/png");	
 			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
-			        document.body.removeChild(clone);
 			        $("#demo02").click();
+			        document.body.removeChild(clone);
 				}
 
 				html2canvas(clone, {
@@ -353,7 +353,7 @@ function handleDownload(){
 			  // body but still out of the viewport
 			  var style = clone.style;
 			  style.position = 'relative';
-			  style.top = window.innerHeight + 'px';
+			  style.top = $(window).height(); + 'px';
 			  style.left = 0;
 
 			  // Append clone to body and return the clone
