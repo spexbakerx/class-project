@@ -289,6 +289,8 @@ function handleDownload(){
 
 
 				function hiddenClone(element){
+
+	
 				  // Create clone of element
 				  var clone = element.cloneNode(true, true);
 
@@ -297,7 +299,7 @@ function handleDownload(){
 				  var style = clone.style;
 				  style.position = 'relative';
 				  style.top = screen.availHeight + 'px';
-				  console.log(screen.availHeight);
+				  style.zIndex = 3;
 				  style.left = 0;
 
 				  // Append clone to body and return the clone
@@ -312,15 +314,15 @@ function handleDownload(){
 
 
 				function myRenderFunction(canvas) {
-					destination.append(canvas);
-			        // tableImage = canvas.toDataURL("image/png");	
-			        // $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
+					// destination.append(canvas);
+			        tableImage = canvas.toDataURL("image/png");	
+			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
 			        document.body.removeChild(clone);
 			    
 				}
 
 				html2canvas(clone, {
-					scale: 10.78125,
+					scale: 5,
 					onrendered: myRenderFunction
 				});
 
@@ -348,6 +350,7 @@ function handleDownload(){
 
 			function hiddenClone(element){
 			  // Create clone of element
+
 			  var clone = element.cloneNode(true);
 
 			  // Position element relatively within the 
