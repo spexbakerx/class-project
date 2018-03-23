@@ -312,9 +312,9 @@ function handleDownload(){
 
 
 				function myRenderFunction(canvas) {
-
-			        tableImage = canvas.toDataURL("image/png");	
-			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
+					destination.append(canvas);
+			        // tableImage = canvas.toDataURL("image/png");	
+			        // $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
 			        document.body.removeChild(clone);
 			    
 				}
