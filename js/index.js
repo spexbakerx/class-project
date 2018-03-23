@@ -320,7 +320,7 @@ function handleDownload(){
 			        $("#demo02").click();
 				}
 
-				html2canvas(canvas, {
+				html2canvas(element, {
 					scale: 10.78125,
 					onrendered: myRenderFunction
 				});
