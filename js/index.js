@@ -276,7 +276,7 @@ var downloadCounter = 0;
 
 // ------- saves flyer image on button click ------- //
 function handleDownload(){
-	$("#js-flyer").on ('click','#download', function(event){
+	$("#js-flyer").on('click','#download', function(event){
 
 
 		
@@ -290,7 +290,7 @@ function handleDownload(){
 
 				function hiddenClone(element){
 				  // Create clone of element
-				  var clone = element.cloneNode(true);
+				  var clone = element.cloneNode(true, true);
 
 				  // Position element relatively within the 
 				  // body but still out of the viewport
@@ -326,7 +326,7 @@ function handleDownload(){
 
 				setTimeout(function(){
 				    $("#demo02").click();
-				}, 2000);
+				}, 1000);
 
 			}
 
