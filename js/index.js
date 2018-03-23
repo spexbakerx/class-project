@@ -231,10 +231,11 @@ function buildFlyer(){
 			            <button type="button" class="button underline close" style="color:white;text-align:center;"><div class="spin">&#x2715;</div></button></a>
 			        </div>		
 			        <div class="modal-content">
-			        	<p style="color:white;"> Click and hold image to save!</p>
-			        	<p style="color:white;font-size:16px;">Suitable for web use only. Visit the desktop version for print-ready size. </p>
+			        	<p style="color:white;">Click and hold image to save!</p>
 			        	</br>
 			    		<div id="destination"></div>
+			    		</br>
+			    		<p style="color:white;font-size:16px;line-height:1.5;">Suitable for web use only. Visit the desktop version for print-ready size. </p>
 			    	</div> 	
 			    </div>`
   }
