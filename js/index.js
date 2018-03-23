@@ -296,7 +296,7 @@ function handleDownload(){
 				  // body but still out of the viewport
 				  var style = clone.style;
 				  style.position = 'relative';
-				  style.top = screen.height + 'px';
+				  style.top = screen.availHeight + 'px';
 				  console.log(screen.availHeight);
 				  style.left = 0;
 
@@ -314,7 +314,7 @@ function handleDownload(){
 				function myRenderFunction(canvas) {
 
 			        tableImage = canvas.toDataURL("image/png");	
-			        destination.append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
+			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
 			        document.body.removeChild(clone);
 			    
 				}
@@ -324,7 +324,9 @@ function handleDownload(){
 					onrendered: myRenderFunction
 				});
 
-				$("#demo02").click();
+				setTimeout(function(){
+				    $("#demo02").click();
+				}, 2000);
 
 			}
 
