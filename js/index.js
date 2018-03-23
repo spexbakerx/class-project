@@ -284,12 +284,9 @@ function handleDownload(){
 		if (isMobile) {
 			if (downloadCounter == 0) {
 				downloadCounter ++;
-				console.log(downloadCounter);
 
 				var element = document.getElementById('flyer-capture');
 				var destination = document.getElementById('destination');
-
-
 
 				function hiddenClone(element){
 				  // Create clone of element
@@ -299,7 +296,7 @@ function handleDownload(){
 				  // body but still out of the viewport
 				  var style = clone.style;
 				  style.position = 'relative';
-				  style.top = window.innerHeight + 'px';
+				  style.top = window.visualViewport.width + 'px';
 				  style.left = 0;
 
 				  // Append clone to body and return the clone
@@ -353,7 +350,7 @@ function handleDownload(){
 			  // body but still out of the viewport
 			  var style = clone.style;
 			  style.position = 'relative';
-			  style.top = $(window).height(); + 'px';
+			  style.top = window.innerHeight + 'px';
 			  style.left = 0;
 
 			  // Append clone to body and return the clone
