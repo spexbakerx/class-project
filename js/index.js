@@ -312,18 +312,19 @@ function handleDownload(){
 
 
 				function myRenderFunction(canvas) {
-					// destination.append(canvas);
 
 			        tableImage = canvas.toDataURL("image/png");	
-			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
-			        // document.body.removeChild(clone);
-			        $("#demo02").click();
+			        destination.append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
+			        document.body.removeChild(clone);
+			    
 				}
 
 				html2canvas(clone, {
 					scale: 10.78125,
 					onrendered: myRenderFunction
 				});
+
+				$("#demo02").click();
 
 			}
 
