@@ -1,6 +1,5 @@
  /* global html2canvas */
 
-// const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const isMobile = (window.innerWidth <= 800 && window.innerHeight <= 600);
 
 // ------- state management ------- //
@@ -297,6 +296,8 @@ function handleDownload(){
 				  var style = clone.style;
 				  style.position = 'relative';
 				  style.top = window.screen.height + 'px';
+				  console.log(window.screen.height);
+				  console.log(style.top);
 				  style.left = 0;
 
 				  // Append clone to body and return the clone
