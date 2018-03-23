@@ -296,7 +296,7 @@ function handleDownload(){
 				  // body but still out of the viewport
 				  var style = clone.style;
 				  style.position = 'relative';
-				  style.top = window.visualViewport.width + 'px';
+				  style.top = document.documentElement.clientHeight + 'px';
 				  style.left = 0;
 
 				  // Append clone to body and return the clone
