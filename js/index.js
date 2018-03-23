@@ -288,27 +288,27 @@ function handleDownload(){
 				var destination = document.getElementById('destination');
 
 
-				// function hiddenClone(element){
-				//   // Create clone of element
-				//   var clone = element.cloneNode(true);
+				function hiddenClone(element){
+				  // Create clone of element
+				  var clone = element.cloneNode(true);
 
-				//   // Position element relatively within the 
-				//   // body but still out of the viewport
-				//   var style = clone.style;
-				//   style.position = 'relative';
-				//   style.top = screen.height + 'px';
-				//   console.log(screen.availHeight);
-				//   style.left = 0;
+				  // Position element relatively within the 
+				  // body but still out of the viewport
+				  var style = clone.style;
+				  style.position = 'relative';
+				  style.top = screen.height + 'px';
+				  console.log(screen.availHeight);
+				  style.left = 0;
 
-				//   // Append clone to body and return the clone
-				//   document.body.appendChild(clone);
-				//   return clone;
-				// }
+				  // Append clone to body and return the clone
+				  document.body.appendChild(clone);
+				  return clone;
+				}
 
-				// var offScreen = document.querySelector('#flyer-capture');
+				var offScreen = document.querySelector('#flyer-capture');
 
-				// // Clone off-screen element
-				// var clone = hiddenClone(offScreen);	
+				// Clone off-screen element
+				var clone = hiddenClone(offScreen);	
 
 
 				function myRenderFunction(canvas) {
@@ -320,7 +320,7 @@ function handleDownload(){
 			        $("#demo02").click();
 				}
 
-				html2canvas(element, {
+				html2canvas(clone, {
 					scale: 10.78125,
 					onrendered: myRenderFunction
 				});
