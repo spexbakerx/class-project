@@ -169,7 +169,6 @@ function handleFinal(){
 			$("#flyer-center h1:nth-of-type(3)").css("font-weight", "bold");
 			$("#flyer-center h2").css("font-weight", "normal");
 			$("#flyer-bottom h2 span").css("border-bottom", "1px solid var(--color2)");
-    		$("#flyer-bottom h2 span").css("padding-bottom", ".5%");
     		$("#circle h2.flyer-price").css("font-family", "var(--font1)");
     		$("#circle h2.flyer-price").css("font-weight", "bold");
     		$("#circle h2.flyer-price").css("line-height", "1");
