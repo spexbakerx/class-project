@@ -287,28 +287,28 @@ function handleDownload(){
 				var element = document.getElementById('flyer-capture');
 				var destination = document.getElementById('destination');
 
-				function hiddenClone(element){
-				  // Create clone of element
-				  var clone = element.cloneNode(true);
 
-				  // Position element relatively within the 
-				  // body but still out of the viewport
-				  var style = clone.style;
-				  style.position = 'relative';
-				  style.top = window.screen.height + 'px';
-				  console.log(window.screen.height);
-				  console.log(style.top);
-				  style.left = 0;
+				// function hiddenClone(element){
+				//   // Create clone of element
+				//   var clone = element.cloneNode(true);
 
-				  // Append clone to body and return the clone
-				  document.body.appendChild(clone);
-				  return clone;
-				}
+				//   // Position element relatively within the 
+				//   // body but still out of the viewport
+				//   var style = clone.style;
+				//   style.position = 'relative';
+				//   style.top = screen.height + 'px';
+				//   console.log(screen.availHeight);
+				//   style.left = 0;
 
-				var offScreen = document.querySelector('#flyer-capture');
+				//   // Append clone to body and return the clone
+				//   document.body.appendChild(clone);
+				//   return clone;
+				// }
 
-				// Clone off-screen element
-				var clone = hiddenClone(offScreen);	
+				// var offScreen = document.querySelector('#flyer-capture');
+
+				// // Clone off-screen element
+				// var clone = hiddenClone(offScreen);	
 
 
 				function myRenderFunction(canvas) {
@@ -316,11 +316,11 @@ function handleDownload(){
 
 			        tableImage = canvas.toDataURL("image/png");	
 			        $('#destination').append('<img style="width: 100%;" id="image" src="' + tableImage + '">');
-			        document.body.removeChild(clone);
+			        // document.body.removeChild(clone);
 			        $("#demo02").click();
 				}
 
-				html2canvas(clone, {
+				html2canvas(canvas, {
 					scale: 10.78125,
 					onrendered: myRenderFunction
 				});
