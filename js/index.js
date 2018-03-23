@@ -232,7 +232,7 @@ function buildFlyer(){
 			            <button type="button" class="button underline close" style="color:white;text-align:center;"><div class="spin">&#x2715;</div></button></a>
 			        </div>		
 			        <div class="modal-content">
-			        	<p style="color:white;"> touch & hold image to save! </p>
+			        	<p style="color:white;font-size:16px;"> Image suitable for web only use. Visit the desktop version for print-ready size! </p>
 			        	</br>
 			    		<div id="destination"></div>
 			    	</div> 	
@@ -299,7 +299,7 @@ function handleDownload(){
 				  var style = clone.style;
 				  style.position = 'relative';
 				  style.top = screen.availHeight + 'px';
-				  style.zIndex = 3;
+				  // style.zIndex = 3;
 				  style.left = 0;
 
 				  // Append clone to body and return the clone
@@ -322,7 +322,7 @@ function handleDownload(){
 				}
 
 				html2canvas(clone, {
-					scale: 5,
+					scale: 2,
 					onrendered: myRenderFunction
 				});
 
